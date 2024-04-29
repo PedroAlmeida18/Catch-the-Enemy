@@ -21,13 +21,16 @@ public class Controla_interface : MonoBehaviour
     void Start()
     {
         Poder.SetActive(false);
-        texto.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       Conta_tempo();
+      if(Poder.activeSelf){
+            tempo = tempo - Time.deltaTime;
+            texto.text = "Tempo é : " + tempo.ToString("0");
+        }
         
     }
     public void OnButtonClick(){
