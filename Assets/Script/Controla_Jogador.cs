@@ -36,6 +36,7 @@ public class Controla_Jogador : MonoBehaviour
         { 
             Poder.SetActive(false);
             Destroy(gameObject);
+            
     
         } 
 }
