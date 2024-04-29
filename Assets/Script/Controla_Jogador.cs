@@ -7,6 +7,8 @@ public class Controla_Jogador : MonoBehaviour
     Rigidbody2D rigidbody2D_Jogador;
     Transform transformjogador ;
     public float velocidade ;
+    public GameObject Poder ;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,4 +28,17 @@ public class Controla_Jogador : MonoBehaviour
         Vector3 novaposicao = new Vector3(eixoX,0,0);
         transformjogador.Translate(novaposicao * velocidade);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Verifica se o collider que colidiu tem a tag "Inimigo"
+        if (collision.gameObject.CompareTag("Inimigo"))
+        { 
+            Poder.SetActive(false);
+            Destroy(gameObject);
+    
+        } 
+}
+
+
 }
