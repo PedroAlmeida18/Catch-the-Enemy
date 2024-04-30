@@ -8,7 +8,10 @@ public class Controla_Jogador : MonoBehaviour
     Transform transformjogador ;
     public float velocidade ;
     public GameObject Poder ;
-    
+    public bool Vivo = true;
+    public bool Andando = false;
+    public GameObject Jogador ;
+    private Animator animatorJogador ;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,7 @@ public class Controla_Jogador : MonoBehaviour
         rigidbody2D_Jogador = GetComponent<Rigidbody2D>();
 
         transformjogador = GetComponent<Transform>();
+        animatorJogador = GetComponent<Animator>();
 
     }
 
@@ -23,10 +27,8 @@ public class Controla_Jogador : MonoBehaviour
     void Update()
 
     {
-        velocidade = 0.25f;
-       float eixoX = Input.GetAxis("Horizontal");
-        Vector3 novaposicao = new Vector3(eixoX,0,0);
-        transformjogador.Translate(novaposicao * velocidade);
+        
+        MovimentaJogador();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,11 +37,21 @@ public class Controla_Jogador : MonoBehaviour
         if (collision.gameObject.CompareTag("Inimigo"))
         { 
             Poder.SetActive(false);
-            Destroy(gameObject);
+            animatorJogador.SetBool("Vivo", false);
+            
+            
             
     
         } 
 }
+ private void MovimentaJogador (){
+        Andando = true;
+        velocidade = 0.25f;
+        float eixoX = Input.GetAxis("Horizontal");
+        Vector3 novaposicao = new Vector3(eixoX,0,0);
+        transformjogador.Translate(novaposicao * velocidade);
+
+ }
 
 
 }

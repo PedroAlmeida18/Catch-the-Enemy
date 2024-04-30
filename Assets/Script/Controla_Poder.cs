@@ -12,7 +12,7 @@ public class Controla_Poder : MonoBehaviour
 
     void Start()
     {
-        collision2DPoder = Poder.GetComponent<Collision2D>();
+        collision2DPoder = GetComponent<Collision2D>();
         Poder.SetActive(false);
     }
 
@@ -20,7 +20,7 @@ public class Controla_Poder : MonoBehaviour
     void Update()
     {
         AcompanhaMouse();
-        //OnCollisionEnter2D(collision2DPoder);
+
         
     }
    private void OnCollisionEnter2D(Collision2D collision)

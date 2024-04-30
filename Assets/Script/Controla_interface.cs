@@ -27,10 +27,7 @@ public class Controla_interface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(Poder.activeSelf){
-            tempo = tempo - Time.deltaTime;
-            texto.text = "Tempo é : " + tempo.ToString("0");
-        }
+      Conta_tempo();
         
     }
     public void OnButtonClick(){
@@ -39,8 +36,7 @@ public class Controla_interface : MonoBehaviour
         
         } 
         if(Poder.activeSelf){
-            Destroy(botao.gameObject);
-            Destroy(Painel.gameObject);
+            Painel.gameObject.SetActive(false);
         }
         
         
@@ -57,9 +53,6 @@ public class Controla_interface : MonoBehaviour
             tempo = tempo - Time.deltaTime;
             texto.text = "Tempo é : " + tempo.ToString("0");
         }
-
-       
-
        }
 
 }
