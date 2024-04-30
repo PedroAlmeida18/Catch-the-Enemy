@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9129330317220402661}
   - component: {fileID: 6885596717901748932}
   - component: {fileID: 3632502777380194285}
-  - component: {fileID: 1194973874571164036}
   - component: {fileID: 2795940631941936299}
   m_Layer: 0
   m_Name: Stand 3
@@ -150,22 +149,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1.1111112}
   m_Direction: 0
---- !u!111 &1194973874571164036
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7711936566554315677}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 0a586f2d17b3b3246b04c8dda1442acd, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: bf1265d6ec81a7d46b78feb109c1d0cc, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &2795940631941936299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 0
+  Poder: {fileID: 0}
