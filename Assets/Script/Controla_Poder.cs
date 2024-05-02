@@ -12,7 +12,7 @@ public class Controla_Poder : MonoBehaviour
 
     void Start()
     {
-        collision2DPoder = GetComponent<Collision2D>();
+        collision2DPoder = Poder.GetComponent<Collision2D>();
         Poder.SetActive(false);
     }
 

@@ -20,14 +20,14 @@ public class Controla_Jogador : MonoBehaviour
 
         transformjogador = GetComponent<Transform>();
         animatorJogador = GetComponent<Animator>();
+    
 
     }
 
     // Update is called once per frame
     void Update()
 
-    {
-        
+    {   
         MovimentaJogador();
     }
 
@@ -39,17 +39,21 @@ public class Controla_Jogador : MonoBehaviour
             Poder.SetActive(false);
             animatorJogador.SetBool("Vivo", false);
             
-            
-            
-    
         } 
 }
  private void MovimentaJogador (){
-        Andando = true;
-        velocidade = 0.25f;
+        
+        velocidade = 5.0f;
         float eixoX = Input.GetAxis("Horizontal");
         Vector3 novaposicao = new Vector3(eixoX,0,0);
-        transformjogador.Translate(novaposicao * velocidade);
+        transformjogador.Translate(novaposicao * velocidade*Time.deltaTime);
+        if(novaposicao != Vector3.zero){
+            animatorJogador.SetBool("Movimenta", true);
+        }
+        else{
+            animatorJogador.SetBool("Movimenta", false);
+        }
+        
 
  }
 
