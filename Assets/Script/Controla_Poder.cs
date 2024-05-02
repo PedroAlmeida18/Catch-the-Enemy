@@ -28,10 +28,9 @@ public class Controla_Poder : MonoBehaviour
         // Verifica se o collider que colidiu tem a tag "Inimigo"
         if (collision.gameObject.CompareTag("Inimigo"))
         {
-           
+            Inimigo.GetComponent<Animator>().SetBool("InimigoPerdeu", true);
             float eixox = Random.Range(-9,9);
             float eixoy = Random.Range(-4,4);
-            
             Destroy(collision.gameObject);
             zumbimorto++;
             print(zumbimorto);

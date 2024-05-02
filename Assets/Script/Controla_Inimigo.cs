@@ -19,5 +19,9 @@ public class Controla_Inimigo : MonoBehaviour
     {
         
     }
+     void OnDestroy (){
+        GetComponent<Animator>().SetBool("InimigoPerdeu", true );
+     }
+
 
 }
