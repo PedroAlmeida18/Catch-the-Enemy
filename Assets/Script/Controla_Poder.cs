@@ -12,7 +12,7 @@ public class Controla_Poder : MonoBehaviour
 
     void Start()
     {
-        collision2DPoder = Poder.GetComponent<Collision2D>();
+
         Poder.SetActive(false);
     }
 
@@ -25,13 +25,13 @@ public class Controla_Poder : MonoBehaviour
     }
    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Verifica se o collider que colidiu tem a tag "Inimigo"
+    
         if (collision.gameObject.CompareTag("Inimigo"))
         {
-            Inimigo.GetComponent<Animator>().SetBool("InimigoPerdeu", true);
+        
+            Destroy(collision.gameObject);
             float eixox = Random.Range(-9,9);
             float eixoy = Random.Range(-4,4);
-            Destroy(collision.gameObject);
             zumbimorto++;
             print(zumbimorto);
             Inimigo.transform.position = new Vector3(eixox,eixoy,0);

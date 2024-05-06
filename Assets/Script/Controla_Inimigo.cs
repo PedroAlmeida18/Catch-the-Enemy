@@ -17,11 +17,17 @@ public class Controla_Inimigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        MovimentaInimigo();
+    }
+    private void MorteInimigo(){
         
     }
-     void OnDestroy (){
-        GetComponent<Animator>().SetBool("InimigoPerdeu", true );
-     }
-
+    private void MovimentaInimigo(){
+        float  velocidade = 0.5f;
+        float x = Random.Range(-9,9);
+        float y = Random.Range(-4,4);
+         Vector3 novaposicao = new Vector3(x,y,0);
+        transformInimigo.Translate(novaposicao*Time.deltaTime*velocidade);
+    }
 
 }

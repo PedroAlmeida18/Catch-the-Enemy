@@ -45,7 +45,8 @@ public class Controla_Jogador : MonoBehaviour
         
         velocidade = 5.0f;
         float eixoX = Input.GetAxis("Horizontal");
-        Vector3 novaposicao = new Vector3(eixoX,0,0);
+        float eixoy = Input.GetAxis("Vertical");
+        Vector3 novaposicao = new Vector3(eixoX,eixoy,0);
         transformjogador.Translate(novaposicao * velocidade*Time.deltaTime);
         if(novaposicao != Vector3.zero){
             animatorJogador.SetBool("Movimenta", true);
