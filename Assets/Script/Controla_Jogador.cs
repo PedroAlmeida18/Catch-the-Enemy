@@ -11,7 +11,8 @@ public class Controla_Jogador : MonoBehaviour
     public bool Vivo = true;
     public bool Andando = false;
     public GameObject Jogador ;
-    private Animator animatorJogador ;
+    private Animator animatorJogador ; 
+    private int vida = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +34,17 @@ public class Controla_Jogador : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Verifica se o collider que colidiu tem a tag "Inimigo"
         if (collision.gameObject.CompareTag("Inimigo"))
         { 
-            Poder.SetActive(false);
-            animatorJogador.SetBool("Vivo", false);
+            if(vida>0){
+                vida = vida-1;
+            }
+            print(vida);
+            if(vida==0){
+                Poder.SetActive(false);
+                animatorJogador.SetBool("Vivo", false);
+                print(vida );
+            }
             
         } 
 }
@@ -57,6 +64,4 @@ public class Controla_Jogador : MonoBehaviour
         
 
  }
-
-
 }
