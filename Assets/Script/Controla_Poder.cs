@@ -6,9 +6,7 @@ using UnityEngine;
 public class Controla_Poder : MonoBehaviour
 {
     public GameObject Poder ;
-    public GameObject Inimigo; 
-   
-
+     
     void Start()
     {
         
@@ -18,8 +16,6 @@ public class Controla_Poder : MonoBehaviour
     void Update()
     {
         AcompanhaMouse();
-
-        
     }
 private void AcompanhaMouse(){
          Vector3 mousePosition = Input.mousePosition;

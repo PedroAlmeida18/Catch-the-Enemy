@@ -40,12 +40,12 @@ public class Controla_Jogador : MonoBehaviour
             if(vida>0){
                 vida = vida-1;
             }
-            print(vida);
+           // print(vida);
             if(vida==0){
                 Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
                 PainelGamerover.gameObject.SetActive(true);
-                print(vida );
+                //print(vida );
             }
             
         } 

@@ -2,44 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Controla_Inimigo : MonoBehaviour
+
 {
-     Rigidbody2D rigidbody2D_inimigo;
+
+    Rigidbody2D rigidbody2D_inimigo;
     Transform transformInimigo;
-    int zumbimorto =0 ;
+    public static int  zumbimorto = 0;
     public int ZumbiVivos = 5;
     public GameObject prefabDoObjeto;
-    public GameObject Inimigo;
-
+    
+    public GameObject PainelVitoria ;
+  
     int vidaInimigo = 100;
     void Start()
     {
         transformInimigo = GetComponent<Transform>();
         rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
+       
       
   }
         
 
-    // Update is called once per frame
     void Update()
     {
         MovimentaInimigo();
+        AtivaVitoria();
+       
     }
     
        private void OnCollisionEnter2D(Collision2D collision)
     {
-    
-        if (collision.gameObject.CompareTag("Poder"))
+         if (collision.gameObject.CompareTag("Poder"))
         {
-            gameObject.SetActive(false);
             float eixox = Random.Range(-9,9);
             float eixoy = Random.Range(-4,4);
+            gameObject.SetActive(false);
             zumbimorto++;
             print(zumbimorto);
-        
+            
         } 
-        
+        AtivaVitoria();
+
 
         }
 
@@ -50,5 +56,13 @@ public class Controla_Inimigo : MonoBehaviour
          Vector3 novaposicao = new Vector3(x,y,0);
         transformInimigo.Translate(novaposicao*Time.deltaTime*velocidade);
     }
+    private void AtivaVitoria(){
+        print(zumbimorto);
+        if(zumbimorto == ZumbiVivos){
+            PainelVitoria.gameObject.SetActive(true);
+
+        }
+    }
+   
 
 }

@@ -16,9 +16,7 @@ public class Controla_interface : MonoBehaviour
    
      public  static int tempoInteiro;
 
-    void Awake(){
-         
-    }
+    
     void Start()
     {
        
@@ -60,8 +58,6 @@ public class Controla_interface : MonoBehaviour
                 if(tempoInteiro==0){
                 Poder.SetActive(false);
                 
-                
-
             }
             }
             
