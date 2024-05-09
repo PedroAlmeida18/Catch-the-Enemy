@@ -13,6 +13,7 @@ public class Controla_Jogador : MonoBehaviour
     public GameObject Jogador ;
     private Animator animatorJogador ; 
     private int vida = 100;
+    public GameObject PainelGamerover;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class Controla_Jogador : MonoBehaviour
             if(vida==0){
                 Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
+                PainelGamerover.gameObject.SetActive(true);
                 print(vida );
             }
             

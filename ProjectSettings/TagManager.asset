@@ -8,6 +8,8 @@ TagManager:
   - Jogador
   - Play
   - Poder
+  - Inicio
+  - Perdeu
   layers:
   - Default
   - TransparentFX

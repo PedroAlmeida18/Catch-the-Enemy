@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Controla_Inimigo : MonoBehaviour
@@ -7,14 +8,18 @@ public class Controla_Inimigo : MonoBehaviour
      Rigidbody2D rigidbody2D_inimigo;
     Transform transformInimigo;
     int zumbimorto =0 ;
+    public int ZumbiVivos = 5;
     public GameObject prefabDoObjeto;
+    public GameObject Inimigo;
 
     int vidaInimigo = 100;
     void Start()
     {
         transformInimigo = GetComponent<Transform>();
         rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
-    }
+      
+  }
+        
 
     // Update is called once per frame
     void Update()
@@ -27,14 +32,12 @@ public class Controla_Inimigo : MonoBehaviour
     
         if (collision.gameObject.CompareTag("Poder"))
         {
-            
             gameObject.SetActive(false);
             float eixox = Random.Range(-9,9);
             float eixoy = Random.Range(-4,4);
             zumbimorto++;
             print(zumbimorto);
-            transformInimigo.position = new Vector3(eixox,eixoy,0);
-            gameObject.SetActive(true);
+        
         } 
         
 

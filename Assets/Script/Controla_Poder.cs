@@ -7,13 +7,11 @@ public class Controla_Poder : MonoBehaviour
 {
     public GameObject Poder ;
     public GameObject Inimigo; 
-    private Collision2D collision2DPoder;
-    private  int zumbimorto = 0;
+   
 
     void Start()
     {
-
-        Poder.SetActive(false);
+        
     }
 
     // Update is called once per frame
