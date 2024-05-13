@@ -7,19 +7,27 @@ using UnityEngine.UI;
 public class Controla_Inimigo : MonoBehaviour
 
 {
-
+   
     Rigidbody2D rigidbody2D_inimigo;
     Transform transformInimigo;
     public static int  zumbimorto = 0;
     public int ZumbiVivos = 5;
     public GameObject prefabDoObjeto;
-    
     public GameObject PainelVitoria ;
-  
-    int vidaInimigo = 100;
+    public Rigidbody2D PoderRigidbody2d;
+    public Controla_Jogador Jogador;
+    public GameObject PoderJogador;
+    public GameObject poderInimigoPrefab;
+    public float velocidadePoder = 5.0f;
+    public float cooldownDisparo = 2.0f; // Tempo de espera entre os disparos
+    private float ultimoDisparoTempo;
+    
+   
+    int vidaInimigo = 20;
     void Start()
     {
         transformInimigo = GetComponent<Transform>();
+        rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
         rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
        
       
@@ -29,7 +37,12 @@ public class Controla_Inimigo : MonoBehaviour
     void Update()
     {
         MovimentaInimigo();
-        AtivaVitoria();
+         if (Time.time > ultimoDisparoTempo + cooldownDisparo)
+        {
+            DispararPoder();
+            ultimoDisparoTempo = Time.time;
+        }
+      
        
     }
     
@@ -37,14 +50,21 @@ public class Controla_Inimigo : MonoBehaviour
     {
          if (collision.gameObject.CompareTag("Poder"))
         {
+           vidaInimigo = vidaInimigo-10;;
+           print(vidaInimigo);
+           
             float eixox = Random.Range(-9,9);
             float eixoy = Random.Range(-4,4);
-            gameObject.SetActive(false);
-            zumbimorto++;
+            if(vidaInimigo==0){
+                 gameObject.SetActive(false);
+                  
+                zumbimorto++;
+            }
             print(zumbimorto);
             
         } 
         AtivaVitoria();
+      
 
 
         }
@@ -57,12 +77,24 @@ public class Controla_Inimigo : MonoBehaviour
         transformInimigo.Translate(novaposicao*Time.deltaTime*velocidade);
     }
     private void AtivaVitoria(){
-        print(zumbimorto);
         if(zumbimorto == ZumbiVivos){
             PainelVitoria.gameObject.SetActive(true);
 
         }
     }
+  private void DispararPoder()
+    {
+        GameObject jogador = GameObject.FindGameObjectWithTag("Jogador");
+        if (jogador != null)
+        {
+            Vector3 direcao = jogador.transform.position - transform.position;
+            direcao.Normalize();
+            GameObject poderInimigo = Instantiate(poderInimigoPrefab, transform.position, Quaternion.identity);
+            Rigidbody2D rbPoderInimigo = poderInimigo.GetComponent<Rigidbody2D>();
+            rbPoderInimigo.velocity = direcao * velocidadePoder;
+        }
+    }
+    
    
 
 }

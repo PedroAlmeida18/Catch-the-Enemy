@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Controla_Jogador : MonoBehaviour
@@ -14,22 +15,24 @@ public class Controla_Jogador : MonoBehaviour
     private Animator animatorJogador ; 
     private int vida = 100;
     public GameObject PainelGamerover;
+     private Camera camera;
+     [SerializeField]
+     private Controla_Poder prefabPoder;
 
     // Start is called before the first frame update
     void Start()
     {
+        this.camera = Camera.main;
         rigidbody2D_Jogador = GetComponent<Rigidbody2D>();
-
         transformjogador = GetComponent<Transform>();
         animatorJogador = GetComponent<Animator>();
-    
-
     }
 
     // Update is called once per frame
     void Update()
 
     {   
+        TiroCompoder();
         MovimentaJogador();
     }
 
@@ -64,6 +67,22 @@ public class Controla_Jogador : MonoBehaviour
             animatorJogador.SetBool("Movimenta", false);
         }
         
+
+ }
+ public void TiroCompoder(){
+    if(Input.GetMouseButtonDown(0)){
+        Vector2 posicaomouse = Input.mousePosition;
+        Vector3 posicaomouseNoMundo = this.camera.ScreenToWorldPoint(posicaomouse);
+        posicaomouseNoMundo.z=0;
+
+         Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position );
+         direcaoPoder = direcaoPoder.normalized;
+         Debug.Log("A posção é :"+ direcaoPoder);
+
+         Controla_Poder NovoPoder= Instantiate(prefabPoder,posicaomouseNoMundo, Quaternion.identity);
+         NovoPoder.MoverPoder(direcaoPoder);
+
+    }
 
  }
 }
