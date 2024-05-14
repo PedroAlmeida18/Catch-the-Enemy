@@ -6,7 +6,7 @@ using UnityEngine;
 public class Controla_Jogador : MonoBehaviour
 {
     Rigidbody2D rigidbody2D_Jogador;
-    Transform transformjogador ;
+   public  Transform transformjogador ;
     public float velocidade ;
     public GameObject Poder ;
     public bool Vivo = true;
@@ -41,7 +41,7 @@ public class Controla_Jogador : MonoBehaviour
         if (collision.gameObject.CompareTag("Inimigo"))
         { 
             if(vida>0){
-                vida = vida-1;
+                vida = vida-5;
             }
            // print(vida);
             if(vida==0){
@@ -77,7 +77,7 @@ public class Controla_Jogador : MonoBehaviour
 
          Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position );
          direcaoPoder = direcaoPoder.normalized;
-         Debug.Log("A posção é :"+ direcaoPoder);
+        
 
          Controla_Poder NovoPoder= Instantiate(prefabPoder,posicaomouseNoMundo, Quaternion.identity);
          NovoPoder.MoverPoder(direcaoPoder);

@@ -2139,14 +2139,8 @@ MonoBehaviour:
   VelocidadeMinimia: 0
   velocidadeMaxima: 0
   ZumbiVivos: 5
-  prefabDoObjeto: {fileID: 0}
-  PainelVitoria: {fileID: 0}
-  PoderRigidbody2d: {fileID: 0}
+  PainelVitoria: {fileID: 1961740446}
   Jogador: {fileID: 0}
-  PoderJogador: {fileID: 0}
-  poderInimigoPrefab: {fileID: 0}
-  velocidadePoder: 5
-  cooldownDisparo: 2
 --- !u!4 &2109591116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 87006073851763277, guid: d4c0337aaa44e9d46ac5f54c8d06b88b, type: 3}

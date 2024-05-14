@@ -162,15 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e415e2f0729fd64589149d382a69a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody2D_inimigo: {fileID: 8887794743479423838}
+  VelocidadeMinimia: 1
+  velocidadeMaxima: 10
   ZumbiVivos: 5
-  prefabDoObjeto: {fileID: 0}
   PainelVitoria: {fileID: 0}
-  PoderRigidbody2d: {fileID: 0}
-  Jogador: {fileID: 2795940631941936299, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
-  PoderJogador: {fileID: 6087818587834342451, guid: 695a133a035662b41aa297d5bb9ea7f9, type: 3}
-  poderInimigoPrefab: {fileID: 5938800273951708339, guid: 01098805573855c488bd777f159ee374, type: 3}
-  velocidadePoder: 5
-  cooldownDisparo: 2
+  Jogador: {fileID: 7711936566554315677, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
 --- !u!95 &5995565442969645730
 Animator:
   serializedVersion: 5
