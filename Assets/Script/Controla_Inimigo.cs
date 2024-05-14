@@ -24,10 +24,15 @@ public class Controla_Inimigo : MonoBehaviour
    private float distancia;
    public GameObject Jogador;
     private float distanciaMin;
+    private Camera camera;
+    [SerializeField]
+    private PoderInimigo prefabPoder;
+    private float TempoEmcriacao;
+
 
     void Start()
     {
-        
+        TempoEmcriacao=0;
         transformInimigo = GetComponent<Transform>();
         rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
         rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
@@ -87,7 +92,14 @@ public class Controla_Inimigo : MonoBehaviour
         distancia = Vector2.Distance( transformInimigo.position, Jogador.transform.position);
         if(distancia > distanciaMin){
             Debug.Log("Pode atirar");
-            
+         Vector3 direcaoPoder = transformInimigo.position - Jogador.transform.position;
+         direcaoPoder = direcaoPoder.normalized;
+        TempoEmcriacao+=Time.deltaTime;
+        if(TempoEmcriacao>=2.0f){
+            TempoEmcriacao=0;
+            PoderInimigo NovoPoder= Instantiate(prefabPoder,transformInimigo.position, Quaternion.identity);
+            NovoPoder.MoverPoder(direcaoPoder);
+        }
             // Realizar o tiro na direção do Jogador 
             /* O que eu preciso:
             Saber Posição do Jogador,
@@ -96,8 +108,5 @@ public class Controla_Inimigo : MonoBehaviour
             Causar dano no usuario   
 
       */  }
-   
  }
- 
-
  }

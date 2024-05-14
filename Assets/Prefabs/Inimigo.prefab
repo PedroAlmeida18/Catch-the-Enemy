@@ -168,6 +168,7 @@ MonoBehaviour:
   ZumbiVivos: 5
   PainelVitoria: {fileID: 0}
   Jogador: {fileID: 7711936566554315677, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
+  prefabPoder: {fileID: 6675785885151832530, guid: 01098805573855c488bd777f159ee374, type: 3}
 --- !u!95 &5995565442969645730
 Animator:
   serializedVersion: 5

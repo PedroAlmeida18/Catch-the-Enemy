@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8245739335501290363}
   - component: {fileID: 6712712429190045181}
   - component: {fileID: 6675785885151832530}
-  - component: {fileID: 672025107191205844}
   m_Layer: 0
   m_Name: Poder_Inimigo
   m_TagString: Untagged
@@ -174,21 +173,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2DPoder: {fileID: 6712712429190045181}
   VelocidadeMovimentacao: 2
---- !u!114 &672025107191205844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5938800273951708339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e415e2f0729fd64589149d382a69a5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody2D_inimigo: {fileID: 0}
-  VelocidadeMinimia: 1
-  velocidadeMaxima: 10
-  ZumbiVivos: 5
-  PainelVitoria: {fileID: 0}
-  PoderInimigo: {fileID: 0}
