@@ -13,7 +13,7 @@ public class Controla_Jogador : MonoBehaviour
     public bool Andando = false;
     public GameObject Jogador ;
     private Animator animatorJogador ; 
-    private int vida = 100;
+    public int vida = 100;
     public GameObject PainelGamerover;
      private Camera camera;
      [SerializeField]
@@ -81,6 +81,7 @@ public class Controla_Jogador : MonoBehaviour
 
          Controla_Poder NovoPoder= Instantiate(prefabPoder,posicaomouseNoMundo, Quaternion.identity);
          NovoPoder.MoverPoder(direcaoPoder);
+         Destroy(NovoPoder);
 
     }
 
