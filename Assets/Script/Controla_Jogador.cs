@@ -81,7 +81,7 @@ public class Controla_Jogador : MonoBehaviour
 
          Controla_Poder NovoPoder= Instantiate(prefabPoder,posicaomouseNoMundo, Quaternion.identity);
          NovoPoder.MoverPoder(direcaoPoder);
-         Destroy(NovoPoder);
+         
 
     }
 

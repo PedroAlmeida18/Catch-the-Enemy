@@ -90,7 +90,7 @@ public class Controla_Inimigo : MonoBehaviour
         // calcular distancia 
         distanciaMin = 2.0f;
         distancia = Vector2.Distance( transformInimigo.position, Jogador.transform.position);
-        if(distancia > distanciaMin){
+        if(distancia >= distanciaMin){
             Debug.Log("Pode atirar");
          Vector3 direcaoPoder = transformInimigo.position - Jogador.transform.position;
          direcaoPoder = direcaoPoder.normalized;
@@ -100,6 +100,7 @@ public class Controla_Inimigo : MonoBehaviour
             PoderInimigo NovoPoder= Instantiate(prefabPoder,transformInimigo.position, Quaternion.identity);
             NovoPoder.MoverPoder(direcaoPoder);
         }
+
             // Realizar o tiro na direção do Jogador 
             /* O que eu preciso:
             Saber Posição do Jogador,

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2DPoder: {fileID: 4035247376988014339}
-  VelocidadeMovimentacao: 1
+  VelocidadeMovimentacao: 15
 --- !u!61 &7763956520967968454
 BoxCollider2D:
   m_ObjectHideFlags: 0

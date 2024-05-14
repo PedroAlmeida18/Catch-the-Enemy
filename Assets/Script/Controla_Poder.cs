@@ -14,7 +14,9 @@ public class Controla_Poder : MonoBehaviour
     [SerializeField]
     private float VelocidadeMovimentacao;
     
-   
+  void  Start(){
+    Destroy(gameObject,2.0f);
+   }
 
     public void MoverPoder(UnityEngine.Vector2 direcao){
         rigidbody2DPoder.velocity= direcao* VelocidadeMovimentacao;

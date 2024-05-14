@@ -13,6 +13,7 @@ public class PoderInimigo : MonoBehaviour
 
     public void MoverPoder(UnityEngine.Vector2 direcao){
         rigidbody2DPoder.velocity= direcao* VelocidadeMovimentacao;
+        Destroy(gameObject);
     }
     void Start()
     {
@@ -24,6 +25,7 @@ public class PoderInimigo : MonoBehaviour
     {
         
     }
-    
+
+
 
 }

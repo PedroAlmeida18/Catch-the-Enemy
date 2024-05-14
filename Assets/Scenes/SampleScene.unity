@@ -2141,6 +2141,7 @@ MonoBehaviour:
   ZumbiVivos: 5
   PainelVitoria: {fileID: 1961740446}
   Jogador: {fileID: 0}
+  prefabPoder: {fileID: 0}
 --- !u!4 &2109591116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 87006073851763277, guid: d4c0337aaa44e9d46ac5f54c8d06b88b, type: 3}
