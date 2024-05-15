@@ -91,11 +91,11 @@ public class Controla_Inimigo : MonoBehaviour
         distanciaMin = 2.0f;
         distancia = Vector2.Distance( transformInimigo.position, Jogador.transform.position);
         if(distancia >= distanciaMin){
-            Debug.Log("Pode atirar");
-         Vector3 direcaoPoder = transformInimigo.position - Jogador.transform.position;
+         Vector3 direcaoPoder =   Jogador.transform.position -transformInimigo.position;
          direcaoPoder = direcaoPoder.normalized;
         TempoEmcriacao+=Time.deltaTime;
         if(TempoEmcriacao>=2.0f){
+             Debug.Log("Pode atirar");
             TempoEmcriacao=0;
             PoderInimigo NovoPoder= Instantiate(prefabPoder,transformInimigo.position, Quaternion.identity);
             NovoPoder.MoverPoder(direcaoPoder);

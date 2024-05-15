@@ -32,14 +32,14 @@ public class NovosInimigos : MonoBehaviour
         if(TempoEmcriacao>=2.0f){
             TempoEmcriacao=0;
              float eixox = Random.Range(-9,9);
-            float eixoy = Random.Range(-4,4);
+            float eixoy = Random.Range(3,3.17f);
             UnityEngine.Vector2 psocaoInimigo = new  UnityEngine.Vector2(eixox,eixoy);
-            while (quantidadeInimigos<5)
+            while (quantidadeInimigos<1)
             {
                 Instantiate(Inimigos, psocaoInimigo, Quaternion.identity);
                 quantidadeInimigos++;
             }
-                quantidadeInimigos=5;
+                quantidadeInimigos=1;
                 Debug.Log("Unatidade de Inimgos criados foi :"+ quantidadeInimigos);
             
             
