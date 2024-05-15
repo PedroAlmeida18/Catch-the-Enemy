@@ -12,6 +12,7 @@ public class NovosInimigos : MonoBehaviour
 {
     public Controla_Inimigo Inimigos ;
     private float TempoEmcriacao;
+     private int quantidadeInimigos;
     void Start()
     {
         TempoEmcriacao = 0;
@@ -20,7 +21,11 @@ public class NovosInimigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
       criacoInimigos();
+            
+            
+      //criacoInimigos();
     }
     private void criacoInimigos(){
         TempoEmcriacao+=Time.deltaTime;
@@ -29,7 +34,16 @@ public class NovosInimigos : MonoBehaviour
              float eixox = Random.Range(-9,9);
             float eixoy = Random.Range(-4,4);
             UnityEngine.Vector2 psocaoInimigo = new  UnityEngine.Vector2(eixox,eixoy);
-            Instantiate(Inimigos, psocaoInimigo, Quaternion.identity);
+            while (quantidadeInimigos<5)
+            {
+                Instantiate(Inimigos, psocaoInimigo, Quaternion.identity);
+                quantidadeInimigos++;
+            }
+                quantidadeInimigos=5;
+                Debug.Log("Unatidade de Inimgos criados foi :"+ quantidadeInimigos);
+            
+            
+            
             
         }
         
