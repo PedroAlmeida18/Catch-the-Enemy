@@ -51,7 +51,20 @@ public class Controla_Jogador : MonoBehaviour
                 //print(vida );
             }
             
+            
         } 
+        if(collision.gameObject.CompareTag("BolaSangue")){
+                if(vida>0){
+                    vida = vida - 10;
+                    Debug.Log("A vida do jogador é : " + vida);
+                }
+                if(vida==0){
+                Poder.SetActive(false);
+                animatorJogador.SetBool("Vivo", false);
+                PainelGamerover.gameObject.SetActive(true);
+                
+            }
+            }
 }
  private void MovimentaJogador (){
         

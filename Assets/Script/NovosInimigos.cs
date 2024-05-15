@@ -40,7 +40,7 @@ public class NovosInimigos : MonoBehaviour
                 quantidadeInimigos++;
             }
                 quantidadeInimigos=1;
-                Debug.Log("Unatidade de Inimgos criados foi :"+ quantidadeInimigos);
+                Debug.Log("quantidade de Inimgos criados foi :"+ quantidadeInimigos);
             
             
             

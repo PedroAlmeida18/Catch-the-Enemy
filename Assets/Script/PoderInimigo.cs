@@ -11,18 +11,19 @@ public class PoderInimigo : MonoBehaviour
     
    
 
-    public void MoverPoder(UnityEngine.Vector2 direcao){
-        rigidbody2DPoder.velocity= direcao* VelocidadeMovimentacao;
-        
-    }
+  
     void Start()
     {
-         Destroy(gameObject,2.0f);
+         Destroy(gameObject,10.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
+      public void MoverPoder(UnityEngine.Vector2 direcao){
+        rigidbody2DPoder.velocity = direcao* VelocidadeMovimentacao;
         
     }
 

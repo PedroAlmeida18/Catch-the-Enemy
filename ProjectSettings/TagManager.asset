@@ -10,6 +10,7 @@ TagManager:
   - Poder
   - Inicio
   - Perdeu
+  - BolaSangue
   layers:
   - Default
   - TransparentFX

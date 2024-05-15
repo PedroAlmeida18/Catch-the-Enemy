@@ -46,7 +46,7 @@ public class Controla_Inimigo : MonoBehaviour
     {
         rigidbody2D_inimigo.velocity = new UnityEngine.Vector2(0,-VelocidadeY);
        MovimentaInimigo();
-       TiroCompoder();
+       TiroInimigor();
        
       
        
@@ -86,7 +86,7 @@ public class Controla_Inimigo : MonoBehaviour
 
         }
     }*/
-    public void TiroCompoder(){
+    public void TiroInimigor(){
         // calcular distancia 
         distanciaMin = 2.0f;
         distancia = Vector2.Distance( transformInimigo.position, Jogador.transform.position);

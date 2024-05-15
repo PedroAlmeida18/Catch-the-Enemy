@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6675785885151832530}
   m_Layer: 0
   m_Name: Poder_Inimigo
-  m_TagString: Untagged
+  m_TagString: BolaSangue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2DPoder: {fileID: 6712712429190045181}
-  VelocidadeMovimentacao: 10
+  VelocidadeMovimentacao: 15
