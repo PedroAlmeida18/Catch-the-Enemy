@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Controla_Jogador : MonoBehaviour
 {
@@ -13,13 +14,14 @@ public class Controla_Jogador : MonoBehaviour
     public bool Andando = false;
     public GameObject Jogador;
     private Animator animatorJogador;
-    public int vida = 100;
+    public float vida = 100.0f;
     public GameObject PainelGamerover;
     private Camera camera;
     [SerializeField]
     private Controla_Poder prefabPoder;
 
     public static Controla_Jogador Instance;
+    [SerializeField] private Slider sliderVida;
 
     private void Awake()
     {
@@ -50,14 +52,15 @@ public class Controla_Jogador : MonoBehaviour
             if (vida > 0)
             {
                 vida = vida - 5;
+                AlteraVida(vida);
             }
-            // print(vida);
             if (vida == 0)
             {
                 Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
                 PainelGamerover.gameObject.SetActive(true);
-                //print(vida );
+                AlteraVida(vida);
+                
             }
 
 
@@ -68,12 +71,14 @@ public class Controla_Jogador : MonoBehaviour
             {
                 vida = vida - 10;
                 Debug.Log("A vida do jogador é : " + vida);
+                AlteraVida(vida);
             }
             if (vida == 0)
             {
                 Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
                 PainelGamerover.gameObject.SetActive(true);
+                AlteraVida(vida);
 
             }
         }
@@ -115,5 +120,8 @@ public class Controla_Jogador : MonoBehaviour
 
         }
 
+    }
+    private void AlteraVida(float vida){
+        sliderVida.value = vida;
     }
 }
