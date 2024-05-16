@@ -56,10 +56,10 @@ public class Controla_Jogador : MonoBehaviour
             }
             if (vida == 0)
             {
+                AlteraVida(vida);
                 Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
                 PainelGamerover.gameObject.SetActive(true);
-                AlteraVida(vida);
                 
             }
 
@@ -70,15 +70,14 @@ public class Controla_Jogador : MonoBehaviour
             if (vida > 0)
             {
                 vida = vida - 10;
-                Debug.Log("A vida do jogador é : " + vida);
                 AlteraVida(vida);
             }
             if (vida == 0)
             {
-                Poder.SetActive(false);
+                AlteraVida(vida);
                 animatorJogador.SetBool("Vivo", false);
                 PainelGamerover.gameObject.SetActive(true);
-                AlteraVida(vida);
+                 Poder.SetActive(false);
 
             }
         }

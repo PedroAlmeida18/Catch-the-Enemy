@@ -4,15 +4,22 @@ using System.Collections.Generic;
 using System.Numerics;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 public class NovosInimigos : MonoBehaviour
 {
     public Controla_Inimigo Inimigos ;
     private float TempoEmcriacao;
     public static int quantidadeInimigos;
+
+   
+    
+    void Awake(){
+       
+    }
+
     void Start()
     {
         TempoEmcriacao = 0;
@@ -44,4 +51,5 @@ public class NovosInimigos : MonoBehaviour
         }
         
     }
+     
 }

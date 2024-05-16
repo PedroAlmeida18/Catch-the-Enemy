@@ -28,6 +28,7 @@ public class Controla_Inimigo : MonoBehaviour
     [SerializeField]
     private PoderInimigo prefabPoder;
     private float TempoEmcriacao;
+    public BarraVida BarravaidaInimigo;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class Controla_Inimigo : MonoBehaviour
         rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
         VelocidadeY = Random.Range(VelocidadeMinimia, velocidadeMaxima);
         Jogador = Controla_Jogador.Instance;
+        BarravaidaInimigo = BarraVida.Instance;
     }
 
 
@@ -53,7 +55,7 @@ public class Controla_Inimigo : MonoBehaviour
         if (collision.gameObject.CompareTag("Poder"))
         {
             vidaInimigo = vidaInimigo - 10;
-
+            BarravaidaInimigo.AlteraVida(vidaInimigo);
             print(vidaInimigo);
 
             if (vidaInimigo == 0)
