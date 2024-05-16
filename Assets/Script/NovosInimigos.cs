@@ -12,7 +12,7 @@ public class NovosInimigos : MonoBehaviour
 {
     public Controla_Inimigo Inimigos ;
     private float TempoEmcriacao;
-     private int quantidadeInimigos;
+    public static int quantidadeInimigos;
     void Start()
     {
         TempoEmcriacao = 0;
@@ -25,7 +25,7 @@ public class NovosInimigos : MonoBehaviour
       criacoInimigos();
             
             
-      //criacoInimigos();
+      //c
     }
     private void criacoInimigos(){
         TempoEmcriacao+=Time.deltaTime;
@@ -38,13 +38,9 @@ public class NovosInimigos : MonoBehaviour
             {
                 Instantiate(Inimigos, psocaoInimigo, Quaternion.identity);
                 quantidadeInimigos++;
-            }
-                quantidadeInimigos=1;
                 Debug.Log("quantidade de Inimgos criados foi :"+ quantidadeInimigos);
-            
-            
-            
-            
+            }
+                
         }
         
     }
