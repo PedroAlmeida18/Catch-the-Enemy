@@ -112,8 +112,10 @@ public class Controla_Jogador : MonoBehaviour
             Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position);
             direcaoPoder = direcaoPoder.normalized;
 
-
-            Controla_Poder NovoPoder = Instantiate(prefabPoder, posicaomouseNoMundo, Quaternion.identity);
+           
+           
+            int ajustarDistanciaDoTiroDoInimigo = 1;
+            Controla_Poder NovoPoder = Instantiate(prefabPoder, transformjogador.position + (direcaoPoder * ajustarDistanciaDoTiroDoInimigo), Quaternion.identity);
             NovoPoder.MoverPoder(direcaoPoder);
 
 

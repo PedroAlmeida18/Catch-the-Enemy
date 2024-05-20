@@ -161,5 +161,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98d25471b068d34b957cf18e9e4be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transformjogador: {fileID: 0}
   velocidade: 0
   Poder: {fileID: 0}
+  Vivo: 1
+  Andando: 0
+  Jogador: {fileID: 0}
+  vida: 100000
+  PainelGamerover: {fileID: 0}
+  prefabPoder: {fileID: 0}
+  sliderVida: {fileID: 0}

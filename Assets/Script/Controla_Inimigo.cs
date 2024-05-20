@@ -18,7 +18,7 @@ public class Controla_Inimigo : MonoBehaviour
     public static int zumbimorto = 0;
     public int ZumbiVivos = 5;
     public GameObject PainelVitoria;
-    int vidaInimigo = 20;
+    int vidaInimigo = 100;
     private float distancia;
 
     public Controla_Jogador Jogador;
