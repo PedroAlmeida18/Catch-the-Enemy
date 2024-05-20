@@ -15,7 +15,7 @@ public class Controla_Jogador : MonoBehaviour
     public GameObject Jogador;
     private Animator animatorJogador;
     public float vida = 100.0f;
-    public GameObject PainelGamerover;
+    
     private Camera camera;
     [SerializeField]
     private Controla_Poder prefabPoder;
@@ -59,7 +59,7 @@ public class Controla_Jogador : MonoBehaviour
                 AlteraVida(vida);
                 Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
-                PainelGamerover.gameObject.SetActive(true);
+                
                 
             }
 
@@ -79,7 +79,7 @@ public class Controla_Jogador : MonoBehaviour
             {
                 AlteraVida(vida);
                 animatorJogador.SetBool("Vivo", false);
-                PainelGamerover.gameObject.SetActive(true);
+               // PainelGamerover.gameObject.SetActive(true);
                  Poder.SetActive(false);
 
             }

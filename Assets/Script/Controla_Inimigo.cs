@@ -17,7 +17,7 @@ public class Controla_Inimigo : MonoBehaviour
     Transform transformInimigo;
     public static int zumbimorto = 0;
     public int ZumbiVivos = 5;
-    public GameObject PainelVitoria;
+  
     int vidaInimigo = 100;
     private float distancia;
 
@@ -68,7 +68,7 @@ public class Controla_Inimigo : MonoBehaviour
 
         }
 
-        //AtivaVitoria();
+        
     }
    private void OnTriggerEnter2D(Collider2D collider2D){
     if (collider2D.gameObject.CompareTag("Poder"))
@@ -101,12 +101,7 @@ public class Controla_Inimigo : MonoBehaviour
         transformInimigo.Translate(novaposicao * Time.deltaTime * velocidade);
     }
 
-    /*  private void AtivaVitoria(){
-          if(zumbimorto == ZumbiVivos){
-              PainelVitoria.gameObject.SetActive(true);
-
-          }
-      }*/
+   
 
     public void TiroInimigor()
     {
