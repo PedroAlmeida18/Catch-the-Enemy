@@ -70,6 +70,27 @@ public class Controla_Inimigo : MonoBehaviour
 
         //AtivaVitoria();
     }
+   private void OnTriggerEnter2D(Collider2D collider2D){
+    if (collider2D.gameObject.CompareTag("Poder"))
+        {
+            vidaInimigo = vidaInimigo - 10;
+            BarravaidaInimigo.AlteraVida(vidaInimigo);
+            print(vidaInimigo);
+
+            if (vidaInimigo == 0)
+            {
+                gameObject.SetActive(false);
+
+                zumbimorto++;
+            }
+            print(zumbimorto);
+
+        }
+
+   }
+
+   
+ 
 
     private void MovimentaInimigo()
     {
