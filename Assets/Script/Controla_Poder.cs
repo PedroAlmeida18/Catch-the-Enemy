@@ -18,7 +18,7 @@ public class Controla_Poder : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 10.0f);
+        Destroy(gameObject, 2.0f);
     }
 
     void Update()

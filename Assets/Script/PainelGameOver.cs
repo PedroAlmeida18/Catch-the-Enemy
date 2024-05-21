@@ -9,7 +9,7 @@ public class PainelGameOver : MonoBehaviour
 {
     public GameObject Poder ; 
     public  Text texto ;
-    public GameObject PainelGaMEOVER;
+    public GameObject PainelGameOver1;
     public UnityEngine.UI.Button botao;
     public float tempo = 100f;
 
@@ -37,11 +37,8 @@ public class PainelGameOver : MonoBehaviour
                 tempoInteiro = (int) tempo;
                 texto.text = "Tempo é : " + tempoInteiro.ToString("0");
                 if(tempoInteiro==0){
-                PainelGaMEOVER.gameObject.SetActive(true);
+                PainelGameOver1.gameObject.SetActive(true);
                 Poder.SetActive(false);
-                
-                
-
             }
             }
             
@@ -49,5 +46,5 @@ public class PainelGameOver : MonoBehaviour
  
 }
 }
-  
+    
 }

@@ -22,6 +22,7 @@ public class Controla_Jogador : MonoBehaviour
 
     public static Controla_Jogador Instance;
     [SerializeField] private Slider sliderVida;
+    public Controla_interface controlaInteface;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class Controla_Jogador : MonoBehaviour
         rigidbody2D_Jogador = GetComponent<Rigidbody2D>();
         transformjogador = GetComponent<Transform>();
         animatorJogador = GetComponent<Animator>();
+        controlaInteface = Controla_interface.Instance;
     }
 
     // Update is called once per frame
@@ -74,12 +76,13 @@ public class Controla_Jogador : MonoBehaviour
             {
                 vida = vida - 10;
                 AlteraVida(vida);
+                Destroy(collider2D.gameObject);
             }
             if (vida == 0)
             {
                 AlteraVida(vida);
                 animatorJogador.SetBool("Vivo", false);
-               // PainelGamerover.gameObject.SetActive(true);
+                controlaInteface.PainelGaMEOVER.SetActive(true);
                  Poder.SetActive(false);
 
             }

@@ -29,6 +29,7 @@ public class Controla_Inimigo : MonoBehaviour
     private PoderInimigo prefabPoder;
     private float TempoEmcriacao;
     public BarraVida BarravaidaInimigo;
+    public Controla_interface controlaInterface;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class Controla_Inimigo : MonoBehaviour
         VelocidadeY = Random.Range(VelocidadeMinimia, velocidadeMaxima);
         Jogador = Controla_Jogador.Instance;
         BarravaidaInimigo = BarraVida.Instance;
+        controlaInterface = Controla_interface.Instance;
     }
 
 
@@ -46,46 +48,27 @@ public class Controla_Inimigo : MonoBehaviour
     {
         rigidbody2D_inimigo.velocity = new UnityEngine.Vector2(0, -VelocidadeY);
         MovimentaInimigo();
-
         TiroInimigor();
+        VerficaVitoria();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Poder"))
-        {
-            vidaInimigo = vidaInimigo - 10;
-            BarravaidaInimigo.AlteraVida(vidaInimigo);
-            print(vidaInimigo);
-
-            if (vidaInimigo == 0)
-            {
-                gameObject.SetActive(false);
-
-                zumbimorto++;
-            }
-            print(zumbimorto);
-
-        }
-
-        
-    }
+   
    private void OnTriggerEnter2D(Collider2D collider2D){
     if (collider2D.gameObject.CompareTag("Poder"))
         {
             vidaInimigo = vidaInimigo - 10;
             BarravaidaInimigo.AlteraVida(vidaInimigo);
-            print(vidaInimigo);
-
+            Destroy(collider2D.gameObject);
             if (vidaInimigo == 0)
             {
                 gameObject.SetActive(false);
 
                 zumbimorto++;
             }
-            print(zumbimorto);
+           
 
         }
+        VerficaVitoria();
 
    }
 
@@ -125,6 +108,11 @@ public class Controla_Inimigo : MonoBehaviour
                 PoderInimigo NovoPoder = Instantiate(prefabPoder, transformInimigo.position + (direcaoPoder * ajustarDistanciaDoTiroDoInimigo), Quaternion.identity);
                 NovoPoder.MoverPoder(direcaoPoder);
             }
+        }
+    }
+    private void VerficaVitoria(){
+        if(zumbimorto == NovosInimigos.quantidadeInimigos){
+            controlaInterface.PainelVitoria.SetActive(true);
         }
     }
 }
