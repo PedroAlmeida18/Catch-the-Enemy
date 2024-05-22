@@ -168,6 +168,6 @@ MonoBehaviour:
   Andando: 0
   Jogador: {fileID: 0}
   vida: 100000
-  PainelGamerover: {fileID: 0}
   prefabPoder: {fileID: 0}
   sliderVida: {fileID: 0}
+  controlaInteface: {fileID: 0}
