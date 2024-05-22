@@ -82,7 +82,8 @@ public class Controla_Jogador : MonoBehaviour
             {
                 AlteraVida(vida);
                 animatorJogador.SetBool("Vivo", false);
-                controlaInteface.PainelGaMEOVER.SetActive(true);
+                 Destroy(collider2D.gameObject);
+                controlaInteface.PainelGaMEOVER.gameObject.SetActive(true);
                  Poder.SetActive(false);
 
             }
