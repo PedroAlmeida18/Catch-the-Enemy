@@ -1,24 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
 using UnityEngine.UI;
 
-public class PainelGameOver : MonoBehaviour
-
+public class ControlaTempo : MonoBehaviour
 {
-    public GameObject Poder ; 
     public  Text texto ;
-    public GameObject PainelGameOver1;
-    public UnityEngine.UI.Button botao;
     public float tempo = 100f;
-
-
-
-    // Start is called before the first frame update
+    public Button botao;
+    private bool poderodarContador = false;
+    public GameObject PainelGameover;
     void Start()
     {
-        
+        poderodarContador = true;
     }
 
     // Update is called once per frame
@@ -26,10 +20,9 @@ public class PainelGameOver : MonoBehaviour
     {
         Conta_tempo();
     }
-
-  private  void Conta_tempo(){
-
-        if(Poder.activeSelf){
+    
+    private  void Conta_tempo(){
+        if(poderodarContador){
              int tempoInteiro;
             texto.gameObject.SetActive(true);
              if(tempo>0){
@@ -37,14 +30,12 @@ public class PainelGameOver : MonoBehaviour
                 tempoInteiro = (int) tempo;
                 texto.text = "Tempo é : " + tempoInteiro.ToString("0");
                 if(tempoInteiro==0){
-                PainelGameOver1.gameObject.SetActive(true);
-                Poder.SetActive(false);
+                PainelGameover.gameObject.SetActive(true);
+                
             }
             }
             
-
- 
+        
+    }
 }
-}
-    
 }

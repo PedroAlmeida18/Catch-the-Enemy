@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 809449148}
   - component: {fileID: 809449147}
   - component: {fileID: 809449146}
-  - component: {fileID: 809449150}
+  - component: {fileID: 809449149}
   m_Layer: 5
   m_Name: Contador_Tempo
   m_TagString: Untagged
@@ -874,7 +874,7 @@ RectTransform:
   m_AnchoredPosition: {x: -534, y: 375.6344}
   m_SizeDelta: {x: 197.0967, y: 54.7311}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &809449150
+--- !u!114 &809449149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -883,14 +883,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 809449145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb1abacf9e72d14e96284626660d9cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 852946cf91c600448a42040730fe98af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Poder: {fileID: 6087818587834342451, guid: 695a133a035662b41aa297d5bb9ea7f9, type: 3}
   texto: {fileID: 809449146}
-  PainelGameOver1: {fileID: 0}
-  botao: {fileID: 0}
   tempo: 100
+  botao: {fileID: 1558967693}
+  PainelGameover: {fileID: 553998516}
 --- !u!1 &832381887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1487,7 @@ GameObject:
   - component: {fileID: 1126580027}
   - component: {fileID: 1126580026}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: Inimigo-Tela
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1568,7 +1567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1143181820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1978,11 +1977,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6ea3431691e464b873a7672710e0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Poder: {fileID: 6087818587834342451, guid: 695a133a035662b41aa297d5bb9ea7f9, type: 3}
-  texto: {fileID: 809449146}
   PainelGaMEOVER: {fileID: 553998516}
   PainelVitoria: {fileID: 1143181819}
-  NomeDoLevalDeJogo: Menuinicial
+  sceneField:
+    _sceneAsset: {fileID: 102900000, guid: ef963c79ab5982740a566a3784eced8c, type: 3}
+    _sceneName: Menuincial
   tempo: 100
 --- !u!1 &1552292682
 GameObject:

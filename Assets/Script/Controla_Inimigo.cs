@@ -16,7 +16,7 @@ public class Controla_Inimigo : MonoBehaviour
     private float VelocidadeY;
     Transform transformInimigo;
     public static int zumbimorto = 0;
-    public int ZumbiVivos = 5;
+   
   
     int vidaInimigo = 100;
     private float distancia;

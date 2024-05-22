@@ -18,8 +18,8 @@ GameObject:
   m_TagString: Poder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &9135562170883783619
 Transform:
   m_ObjectHideFlags: 0
