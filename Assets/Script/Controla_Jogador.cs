@@ -24,6 +24,7 @@ public class Controla_Jogador : MonoBehaviour
     [SerializeField] private Slider sliderVida;
     public Controla_interface controlaInteface;
 
+
     private void Awake()
     {
         Instance = this;
@@ -132,4 +133,6 @@ public class Controla_Jogador : MonoBehaviour
     private void AlteraVida(float vida){
         sliderVida.value = vida;
     }
+    
+    
 }

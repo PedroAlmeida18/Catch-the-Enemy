@@ -13,10 +13,11 @@ public class Controla_interface : MonoBehaviour
     
     public GameObject PainelGaMEOVER;
     public GameObject PainelVitoria;
+    public GameObject PainelPause;
   
-  public SceneField sceneField;
+    public SceneField sceneField;
     public float tempo = 100f;
-     public static Controla_interface Instance;
+    public static Controla_interface Instance;
 
 
     void Awake(){
@@ -39,4 +40,15 @@ public class Controla_interface : MonoBehaviour
     public void proximaFase(){
         print("Você venceu ");
     }
+    
+    public void ativarPause(){
+        Time.timeScale = 0;
+        PainelPause.gameObject.SetActive(true);
+
+    }
+    public void desativarPause(){
+        Time.timeScale=1;
+        PainelPause.gameObject.SetActive(false);
+    }
+
 }
