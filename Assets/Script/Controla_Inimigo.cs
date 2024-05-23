@@ -78,7 +78,7 @@ public class Controla_Inimigo : MonoBehaviour
     private void MovimentaInimigo()
     {
         Vector3 direcaoPSeguir = Jogador.transform.position - transformInimigo.position;
-        float velocidade = 5.0f;
+        float velocidade = 2.0f;
         float x = Random.Range(-9, 9);
         float y = Random.Range(-4, 4);
         Vector3 novaposicao = new Vector3(x, y, 0);

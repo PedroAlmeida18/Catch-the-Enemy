@@ -2724,6 +2724,22 @@ PrefabInstance:
       propertyPath: controlaInteface
       value: 
       objectReference: {fileID: 1506597831}
+    - target: {fileID: 3632502777380194285, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7901331
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632502777380194285, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1923403
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632502777380194285, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.014990137
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632502777380194285, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.058856156
+      objectReference: {fileID: 0}
     - target: {fileID: 6885596717901748932, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
       propertyPath: m_Simulated
       value: 1
@@ -2734,7 +2750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6885596717901748932, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
       propertyPath: m_GravityScale
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7711936566554315677, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
       propertyPath: m_Name

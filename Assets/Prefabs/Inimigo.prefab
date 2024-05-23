@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.041119155}
-  m_Size: {x: 1, y: 1.5508963}
+  m_Offset: {x: 0, y: 0.011134929}
+  m_Size: {x: 1, y: 1.0492088}
   m_Direction: 0
 --- !u!114 &1272567476788429240
 MonoBehaviour:
@@ -170,11 +170,10 @@ MonoBehaviour:
   rigidbody2D_inimigo: {fileID: 8887794743479423838}
   VelocidadeMinimia: 1
   velocidadeMaxima: 10
-  ZumbiVivos: 5
-  PainelVitoria: {fileID: 6307735609672006485, guid: 7f1a4a194c9ce904086e253761a98d80, type: 3}
   Jogador: {fileID: 2795940631941936299, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
   prefabPoder: {fileID: 6675785885151832530, guid: 01098805573855c488bd777f159ee374, type: 3}
   BarravaidaInimigo: {fileID: 0}
+  controlaInterface: {fileID: 0}
 --- !u!95 &5995565442969645730
 Animator:
   serializedVersion: 5
