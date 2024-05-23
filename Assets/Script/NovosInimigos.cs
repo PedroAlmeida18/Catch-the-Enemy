@@ -17,6 +17,7 @@ public class NovosInimigos : MonoBehaviour
    
     
     void Awake(){
+        
        
     }
 
@@ -28,11 +29,7 @@ public class NovosInimigos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-      criacoInimigos();
-            
-            
-      //c
+      criacoInimigos();   
     }
     private void criacoInimigos(){
         TempoEmcriacao+=Time.deltaTime;
