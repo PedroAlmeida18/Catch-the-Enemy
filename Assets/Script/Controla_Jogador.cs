@@ -65,6 +65,22 @@ public class Controla_Jogador : MonoBehaviour
                 
                 
             }
+        if(collision.gameObject.CompareTag("Covas")){
+            if (vida > 0)
+            {
+                vida = vida - 5;
+                AlteraVida(vida);
+            }
+            if (vida == 0)
+            {
+                AlteraVida(vida);
+               // Poder.SetActive(false);
+                animatorJogador.SetBool("Vivo", false);
+                
+                
+            }
+
+        }
 
 
         }
@@ -133,6 +149,7 @@ public class Controla_Jogador : MonoBehaviour
     private void AlteraVida(float vida){
         sliderVida.value = vida;
     }
+    
     
     
 }

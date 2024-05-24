@@ -12,7 +12,7 @@ public class NovosInimigos : MonoBehaviour
 {
     public Controla_Inimigo Inimigos ;
     private float TempoEmcriacao;
-    public  int quantidadeInimigos;
+    public  int quantidadeInimigosFase1;
     [SerializeField] private int duvida;
     public static int SalvarQuantidadeInimigos ;
    
@@ -40,12 +40,12 @@ public class NovosInimigos : MonoBehaviour
              float eixox = Random.Range(-9,9);
             float eixoy = Random.Range(3,3.17f);
             UnityEngine.Vector2 psocaoInimigo = new  UnityEngine.Vector2(eixox,eixoy);
-            while (quantidadeInimigos<1)
+            while (quantidadeInimigosFase1<1)
             {
                 Instantiate(Inimigos, psocaoInimigo, Quaternion.identity);
-                quantidadeInimigos++;
-                SalvarQuantidadeInimigos = quantidadeInimigos;
-                Debug.Log("quantidade de Inimgos criados foi :"+ quantidadeInimigos);
+                quantidadeInimigosFase1++;
+                SalvarQuantidadeInimigos = quantidadeInimigosFase1;
+                Debug.Log("quantidade de Inimgos criados foi :"+ quantidadeInimigosFase1);
             }
                 
         }
