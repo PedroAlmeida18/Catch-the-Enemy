@@ -12,8 +12,9 @@ public class NovosInimigos : MonoBehaviour
 {
     public Controla_Inimigo Inimigos ;
     private float TempoEmcriacao;
-    public static int quantidadeInimigos;
-
+    public  int quantidadeInimigos;
+    [SerializeField] private int duvida;
+    public static int SalvarQuantidadeInimigos ;
    
     
     void Awake(){
@@ -34,6 +35,7 @@ public class NovosInimigos : MonoBehaviour
     private void criacoInimigos(){
         TempoEmcriacao+=Time.deltaTime;
         if(TempoEmcriacao>=2.0f){
+            Debug.Log("CRIOU");
             TempoEmcriacao=0;
              float eixox = Random.Range(-9,9);
             float eixoy = Random.Range(3,3.17f);
@@ -42,6 +44,7 @@ public class NovosInimigos : MonoBehaviour
             {
                 Instantiate(Inimigos, psocaoInimigo, Quaternion.identity);
                 quantidadeInimigos++;
+                SalvarQuantidadeInimigos = quantidadeInimigos;
                 Debug.Log("quantidade de Inimgos criados foi :"+ quantidadeInimigos);
             }
                 

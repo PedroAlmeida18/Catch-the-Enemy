@@ -60,7 +60,7 @@ public class Controla_Jogador : MonoBehaviour
             if (vida == 0)
             {
                 AlteraVida(vida);
-                Poder.SetActive(false);
+               // Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
                 
                 
@@ -85,7 +85,7 @@ public class Controla_Jogador : MonoBehaviour
                 animatorJogador.SetBool("Vivo", false);
                  Destroy(collider2D.gameObject);
                 controlaInteface.PainelGaMEOVER.gameObject.SetActive(true);
-                 Poder.SetActive(false);
+               //  Poder.SetActive(false);
 
             }
         }

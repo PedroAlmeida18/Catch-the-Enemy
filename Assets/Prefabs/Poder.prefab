@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.95, y: -4.33, z: 0}
-  m_LocalScale: {x: 0.5656, y: 0.24975002, z: 1}
+  m_LocalScale: {x: 0.5656, y: 0.24975, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06239304, y: 0.070655346}
+  m_Offset: {x: -0.06239304, y: 0.07065535}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -144,7 +144,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7487781, y: 2.9891706}
+  m_Size: {x: 1.748778, y: 2.989171}
   m_EdgeRadius: 0
 --- !u!50 &4035247376988014339
 Rigidbody2D:
@@ -158,7 +158,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.73841465
+  m_Mass: 0.7384146
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
