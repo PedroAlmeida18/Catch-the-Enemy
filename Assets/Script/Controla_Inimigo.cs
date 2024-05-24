@@ -30,6 +30,7 @@ public class Controla_Inimigo : MonoBehaviour
     private float TempoEmcriacao;
     public BarraVida BarravaidaInimigo;
     public Controla_interface controlaInterface;
+    public NovosInimigos novosInimigos;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class Controla_Inimigo : MonoBehaviour
         Jogador = Controla_Jogador.Instance;
         BarravaidaInimigo = BarraVida.Instance;
         controlaInterface = Controla_interface.Instance;
+        novosInimigos = NovosInimigos.Instance;
     }
 
 
@@ -113,7 +115,7 @@ public class Controla_Inimigo : MonoBehaviour
         }
     }
     private void VerficaVitoria(){
-        if(zumbimorto == NovosInimigos.SalvarQuantidadeInimigos){
+        if(zumbimorto == novosInimigos.SalvarQuantidadeInimigos){
             controlaInterface.PainelVitoria.gameObject.SetActive(true);
         }
     }

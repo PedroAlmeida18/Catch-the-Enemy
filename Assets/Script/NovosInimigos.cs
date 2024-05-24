@@ -14,12 +14,13 @@ public class NovosInimigos : MonoBehaviour
     private float TempoEmcriacao;
     public  int quantidadeInimigosFase1;
     [SerializeField] private int duvida;
-    public static int SalvarQuantidadeInimigos ;
+    public int SalvarQuantidadeInimigos ;
+    public static NovosInimigos Instance;
    
     
     void Awake(){
         
-       
+       Instance = this;
     }
 
     void Start()

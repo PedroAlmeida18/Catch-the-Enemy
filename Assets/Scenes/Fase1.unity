@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1046,6 +1045,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inimigos: {fileID: 1272567476788429240, guid: 4accbcd8aad44d04a96895d7dd9cd0b8, type: 3}
+  quantidadeInimigosFase1: 0
+  duvida: 0
+  SalvarQuantidadeInimigos: 0
 --- !u!4 &755650405
 Transform:
   m_ObjectHideFlags: 0
@@ -2538,6 +2540,9 @@ MonoBehaviour:
   sceneField:
     _sceneAsset: {fileID: 102900000, guid: ef963c79ab5982740a566a3784eced8c, type: 3}
     _sceneName: Menuincial
+  Fase2:
+    _sceneAsset: {fileID: 102900000, guid: 2487c4c3bf2fed643b2b5290314fc368, type: 3}
+    _sceneName: Fase2
   tempo: 100
 --- !u!1 &1552292682
 GameObject:
@@ -3039,7 +3044,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1506597831}
         m_TargetAssemblyTypeName: Controla_interface, Assembly-CSharp
         m_MethodName: proximaFase
         m_Mode: 1

@@ -14,8 +14,8 @@ public class Controla_interface : MonoBehaviour
     public GameObject PainelGaMEOVER;
     public GameObject PainelVitoria;
     public GameObject PainelPause;
-  
     public SceneField sceneField;
+    public SceneField Fase2;
     public float tempo = 100f;
     public static Controla_interface Instance;
 
@@ -38,7 +38,8 @@ public class Controla_interface : MonoBehaviour
         SceneManager.LoadScene(sceneField.SceneName);
     }
     public void proximaFase(){
-        print("Você venceu ");
+        SceneManager.LoadScene(Fase2.SceneName);
+        PainelVitoria.SetActive(false);
     }
     
     public void ativarPause(){
