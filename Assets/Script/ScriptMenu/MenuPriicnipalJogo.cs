@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MenuPriicnipalJogo : MonoBehaviour
 {
- [SerializeField] private string NomeDoLevalDeJogo;
-  [SerializeField] private GameObject PainelMneuInicial;
- [SerializeField] private GameObject PainelOpções;
+
+[SerializeField] private GameObject PainelMneuInicial;
+[SerializeField] private GameObject PainelOpções;
+public SceneField sceneField;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
     public void Jogar(){
-        SceneManager.LoadScene(NomeDoLevalDeJogo);
+        SceneManager.LoadScene(sceneField.SceneName);
     }
     public void Opcoes(){
         PainelMneuInicial.SetActive(false);

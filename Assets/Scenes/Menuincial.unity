@@ -1328,9 +1328,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c8d63680ca4464f849e932dfbab1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NomeDoLevalDeJogo: Jogo
+  NomeDoLevalDeJogo: 
   PainelMneuInicial: {fileID: 1161456815}
   "PainelOp\xE7\xF5es": {fileID: 2091847493}
+  sceneField:
+    _sceneAsset: {fileID: 102900000, guid: f5d7564034ac4404ea95a1a21599d2cd, type: 3}
+    _sceneName: MenuFases
 --- !u!4 &1153349831
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Menuincial.unity
     guid: ef963c79ab5982740a566a3784eced8c
   - enabled: 1
-    path: Assets/Scenes/Jogo.unity
+    path: Assets/Scenes/MenuFases.unity
+    guid: f5d7564034ac4404ea95a1a21599d2cd
+  - enabled: 1
+    path: Assets/Scenes/Fase1.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 435a11aeb1e33724bb65bb20fc266796, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 97f52c386f19be34abfa7d4638510772, type: 2}
