@@ -8,6 +8,7 @@ public class MenuPriicnipalJogo : MonoBehaviour
 
 [SerializeField] private GameObject PainelMneuInicial;
 [SerializeField] private GameObject PainelOpções;
+[SerializeField] private AudioSource MusicaFundo;
 public SceneField sceneField;
     void Start()
     {
@@ -35,6 +36,10 @@ public SceneField sceneField;
     public void Sair(){
         Debug.Log("Saindo do Jogo");
         Application.Quit();
+
+    }
+    public void ControleVolume(float valor){
+        MusicaFundo.volume = valor;
 
     }
 }

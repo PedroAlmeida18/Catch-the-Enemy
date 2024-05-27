@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Controla_Jogador : MonoBehaviour
 {
+    public FixedJoystick MovimentaControle ;
     Rigidbody2D rigidbody2D_Jogador;
     public Transform transformjogador;
     public float velocidade;
@@ -110,8 +111,10 @@ public class Controla_Jogador : MonoBehaviour
     {
 
         velocidade = 5.0f;
-        float eixoX = Input.GetAxis("Horizontal");
-        float eixoy = Input.GetAxis("Vertical");
+       // float eixoX = Input.GetAxis("Horizontal");
+        //float eixoy = Input.GetAxis("Vertical");
+        float eixoX = MovimentaControle.Horizontal;
+        float eixoy = MovimentaControle.Vertical;
         Vector3 novaposicao = new Vector3(eixoX, eixoy, 0);
         transformjogador.Translate(novaposicao * velocidade * Time.deltaTime);
         if (novaposicao != Vector3.zero)
@@ -127,9 +130,10 @@ public class Controla_Jogador : MonoBehaviour
     }
     public void TiroCompoder()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount>0)
         {
-            Vector2 posicaomouse = Input.mousePosition;
+            Touch toqueTiro = Input.GetTouch(1);
+            Vector2 posicaomouse = toqueTiro.position;
             Vector3 posicaomouseNoMundo = this.camera.ScreenToWorldPoint(posicaomouse);
             posicaomouseNoMundo.z = 0;
 

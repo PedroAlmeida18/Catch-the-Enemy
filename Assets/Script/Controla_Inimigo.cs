@@ -16,8 +16,6 @@ public class Controla_Inimigo : MonoBehaviour
     private float VelocidadeY;
     Transform transformInimigo;
     public static int zumbimorto = 0;
-   
-  
     int vidaInimigo = 100;
     private float distancia;
 
@@ -117,6 +115,14 @@ public class Controla_Inimigo : MonoBehaviour
     private void VerficaVitoria(){
         if(zumbimorto == novosInimigos.SalvarQuantidadeInimigos){
             controlaInterface.PainelVitoria.gameObject.SetActive(true);
-        }
+            if(controlaInterface.PainelVitoria.activeSelf){
+                Jogador.MovimentaControle.gameObject.SetActive(false);
+            
+            }
+           
+            zumbimorto = 0;
+            
     }
+} 
+
 }
