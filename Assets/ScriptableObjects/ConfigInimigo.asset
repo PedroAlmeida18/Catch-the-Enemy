@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db7d5a6cc76574c8374b99241b76ac, type: 3}
+  m_Name: ConfigInimigo
+  m_EditorClassIdentifier: 
+  inimigo: {fileID: 1272567476788429240, guid: 4accbcd8aad44d04a96895d7dd9cd0b8, type: 3}
+  propriedadeinimigo: {fileID: 11400000, guid: 4febbf26f58fa0a468c6301d8b25991d, type: 2}

@@ -11,17 +11,17 @@ using Vector3 = UnityEngine.Vector3;
 public class Controla_Inimigo : MonoBehaviour
 {
     public Rigidbody2D rigidbody2D_inimigo;
-    public float VelocidadeMinimia = 1;
-    public float velocidadeMaxima = 10;
+   
     private float VelocidadeY;
     Transform transformInimigo;
     public static int zumbimorto = 0;
-    int vidaInimigo = 100;
+   
     private float distancia;
 
     public Controla_Jogador Jogador;
 
-    private float distanciaMin;
+    int vidaInimigo = 100;
+
     private Camera camera;
     [SerializeField]
     private PoderInimigo prefabPoder;
@@ -29,6 +29,7 @@ public class Controla_Inimigo : MonoBehaviour
     public BarraVida BarravaidaInimigo;
     public Controla_interface controlaInterface;
     public NovosInimigos novosInimigos;
+    public  Propriedades propriedadesInimigo;
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class Controla_Inimigo : MonoBehaviour
         transformInimigo = GetComponent<Transform>();
         rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
         rigidbody2D_inimigo = GetComponent<Rigidbody2D>();
-        VelocidadeY = Random.Range(VelocidadeMinimia, velocidadeMaxima);
+        VelocidadeY = Random.Range(this.propriedadesInimigo.VelocidadeMinimia, this.propriedadesInimigo.Velocidademax);
         Jogador = Controla_Jogador.Instance;
         BarravaidaInimigo = BarraVida.Instance;
         controlaInterface = Controla_interface.Instance;
@@ -91,10 +92,9 @@ public class Controla_Inimigo : MonoBehaviour
     public void TiroInimigor()
     {
         // calcular distancia
-        distanciaMin = 2.0f;
         distancia = Vector2.Distance(transformInimigo.position, Jogador.transform.position);
 
-        if (distancia >= distanciaMin)
+        if (distancia >= this.propriedadesInimigo.distanciaMinima)
         {
             Vector3 direcaoPoder = Jogador.transform.position - transformInimigo.position;
             direcaoPoder = direcaoPoder.normalized;

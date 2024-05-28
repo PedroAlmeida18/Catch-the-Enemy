@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Controla_Jogador : MonoBehaviour
 {
+    [SerializeField] private AudioSource MusicaDerrota;
     public FixedJoystick MovimentaControle ;
     Rigidbody2D rigidbody2D_Jogador;
     public Transform transformjogador;
@@ -45,7 +46,12 @@ public class Controla_Jogador : MonoBehaviour
     void Update()
 
     {
-        TiroCompoder();
+        #if !UNITY_EDITOR
+        TiroCompoderAndroid();
+        #else 
+        TiroCompoderPc();
+        #endif
+
         MovimentaJogador();
     }
 
@@ -102,6 +108,8 @@ public class Controla_Jogador : MonoBehaviour
                 animatorJogador.SetBool("Vivo", false);
                  Destroy(collider2D.gameObject);
                 controlaInteface.PainelGaMEOVER.gameObject.SetActive(true);
+                MusicaDerrota.gameObject.SetActive(true);
+
                //  Poder.SetActive(false);
 
             }
@@ -128,7 +136,7 @@ public class Controla_Jogador : MonoBehaviour
 
 
     }
-    public void TiroCompoder()
+    public void TiroCompoderAndroid()
     {
         if (Input.touchCount>0)
         {
@@ -150,10 +158,28 @@ public class Controla_Jogador : MonoBehaviour
         }
 
     }
-    private void AlteraVida(float vida){
+    public void TiroCompoderPc(){
+         
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 posicaomouse = Input.mousePosition;
+            Vector3 posicaomouseNoMundo = this.camera.ScreenToWorldPoint(posicaomouse);
+            posicaomouseNoMundo.z = 0;
+
+            Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position);
+            direcaoPoder = direcaoPoder.normalized;
+
+
+
+            int ajustarDistanciaDoTiroDoInimigo = 1;
+            Controla_Poder NovoPoder = Instantiate(prefabPoder, transformjogador.position + (direcaoPoder * ajustarDistanciaDoTiroDoInimigo), Quaternion.identity);
+            NovoPoder.MoverPoder(direcaoPoder);
+
+
+        }
+
+    }
+      private void AlteraVida(float vida){
         sliderVida.value = vida;
     }
-    
-    
-    
-}
+    }
