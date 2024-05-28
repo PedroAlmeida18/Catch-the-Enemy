@@ -25,4 +25,4 @@ public class BarraVida : MonoBehaviour
         sliderVida.value = vida;
     }
 
-} //TJ 148 134 857 BR
+} 
