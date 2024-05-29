@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ConfigNivel2
   m_EditorClassIdentifier: 
   inimigo: {fileID: 11400000, guid: f59bfe81c4a9bd7468edcbcd66ba8330, type: 2}
-  quantidadeInimigosFase: 12
+  quantidadeInimigosFase: 5
+  distanciaMin: 1.5

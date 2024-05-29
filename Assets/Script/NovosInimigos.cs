@@ -42,8 +42,8 @@ public class NovosInimigos : MonoBehaviour
 
         for (int x = 0; x < atualConfigNivelScriptableObject.QuantidadeInimigos; x++)
         {
-            float eixox = Random.Range(-9, 9);
-            float eixoy = Random.Range(3, 3.17f);
+            float eixox = Random.Range(-8, 8);
+            float eixoy = Random.Range(-4.5f,4.5f);
             Vector2 psocaoInimigo = new Vector2(eixox, eixoy);
 
             yield return new WaitForSeconds(atualConfigNivelScriptableObject.PegarInimigo.PropriedadesInimigo.TempoDecriacao);
@@ -58,27 +58,6 @@ public class NovosInimigos : MonoBehaviour
         }
     }
 
-    private void criacoInimigos()
-    {
-        TempoEmcriacao += Time.deltaTime;
-        if (TempoEmcriacao >= 2.0f)
-        {
-            Debug.Log("CRIOU");
-            TempoEmcriacao = 0;
-            float eixox = Random.Range(-9, 9);
-            float eixoy = Random.Range(3, 3.17f);
-            UnityEngine.Vector2 psocaoInimigo = new UnityEngine.Vector2(eixox, eixoy);
-            for (int x = 0; x < configNivelScriptableObjects[0].QuantidadeInimigos; x++)
-            {
-                Instantiate(configNivelScriptableObjects[0].PegarInimigo.InimigoPrefab, psocaoInimigo, Quaternion.identity);
-                quantidadeInimigosFase1++;
-                SalvarQuantidadeInimigos = quantidadeInimigosFase1;
-                Debug.Log("quantidade de Inimgos criados foi :" + quantidadeInimigosFase1);
-            }
-
-        }
-
-    }
 
 
 }

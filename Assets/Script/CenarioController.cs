@@ -6,7 +6,7 @@ public class CenarioController : MonoBehaviour
 {
     [SerializeField] private List<GameObject> cenarios;
 
-    private GameController gameController;
+   [SerializeField] private GameController gameController;
 
     private void Start()
     {

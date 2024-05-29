@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bed124986c21e2a46ab1036b27fee235, type: 3}
-  m_Name: ConfigNivel1
+  m_Name: ConfigNivel3
   m_EditorClassIdentifier: 
   inimigo: {fileID: 11400000, guid: f59bfe81c4a9bd7468edcbcd66ba8330, type: 2}
-  quantidadeInimigosFase: 2
-  distanciaMin: 2
+  quantidadeInimigosFase: 7
+  distanciaMin: 1

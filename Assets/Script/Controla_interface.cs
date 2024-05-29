@@ -1,23 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class Controla_interface : MonoBehaviour
 {
-    
-    
     public GameObject PainelGaMEOVER;
     public GameObject PainelVitoria;
     public GameObject PainelPause;
     public SceneField sceneField;
-    public SceneField Fase2;
+    public SceneField Fase;
     public float tempo = 100f;
     public static Controla_interface Instance;
+    private GameController _gameController;
 
 
     void Awake(){
@@ -25,7 +22,7 @@ public class Controla_interface : MonoBehaviour
     }
     void Start()
     {
-      
+      _gameController = GameController.Instance;
     }
 
     // Update is called once per frame
@@ -38,7 +35,8 @@ public class Controla_interface : MonoBehaviour
         SceneManager.LoadScene(sceneField.SceneName);
     }
     public void proximaFase(){
-        SceneManager.LoadScene(Fase2.SceneName);
+         _gameController.SetarNivelSelecionado(1);
+        SceneManager.LoadScene(Fase.SceneName);
         PainelVitoria.SetActive(false);
     }
     
