@@ -1,10 +1,15 @@
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 [System.Serializable]
-public class SceneField
+
+public class SceneField 
 {
+    #if UNITY_EDITOR
     public SceneAsset _sceneAsset;
+    #endif
     public string _sceneName;
 
     public string SceneName
@@ -19,6 +24,7 @@ public class SceneField
     }
 }
 
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(SceneField))]
 public class SceneFieldPropertyDrawer : PropertyDrawer
 {
@@ -44,3 +50,4 @@ public class SceneFieldPropertyDrawer : PropertyDrawer
         EditorGUI.EndProperty();
     }
 }
+#endif

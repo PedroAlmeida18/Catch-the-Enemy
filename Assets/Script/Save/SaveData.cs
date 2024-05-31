@@ -6,9 +6,8 @@ public class SaveData : MonoBehaviour
 {
     public int Nivel ;
     public int vidaJogador;
-     public  void JogadorSaveData(){
-
-     }
+    public string  name ;
+    
     void Start()
     {
         
