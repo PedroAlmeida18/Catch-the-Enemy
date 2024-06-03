@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Propriedades : ScriptableObject
     [SerializeField] private float distanciaMin;
     [SerializeField] private float vidaInimigo_Propriedade;
     [SerializeField] private float Tempodecriacao;
+    [SerializeField] private float DanoCausado;
 
     public float VelocidadeMinimia {
         get{
@@ -37,6 +39,11 @@ public class Propriedades : ScriptableObject
     public float TempoDecriacao{
         get{
             return this.Tempodecriacao;
+        }
+    }
+    public float DanoCusadoPeloInimigo{
+        get{
+            return this.DanoCausado;
         }
     }
     

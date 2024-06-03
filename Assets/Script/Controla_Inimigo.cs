@@ -30,6 +30,7 @@ public class Controla_Inimigo : MonoBehaviour
     public Controla_interface controlaInterface;
     public NovosInimigos novosInimigos;
     public  Propriedades propriedadesInimigo;
+   
 
     void Start()
     {
@@ -115,6 +116,7 @@ public class Controla_Inimigo : MonoBehaviour
     private void VerficaVitoria(){
         if(zumbimorto == novosInimigos.SalvarQuantidadeInimigos){
             controlaInterface.PainelVitoria.gameObject.SetActive(true);
+           
             if(controlaInterface.PainelVitoria.activeSelf){
                 Jogador.MovimentaControle.gameObject.SetActive(false);
             

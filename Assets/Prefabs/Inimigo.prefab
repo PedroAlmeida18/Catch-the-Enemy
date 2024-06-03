@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 495024710778641280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1203, y: 2.0724456, z: 1}
+  m_LocalScale: {x: 2.1203, y: 2.072446, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2639868305579485695}
@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.011134929}
-  m_Size: {x: 1, y: 1.0492088}
+  m_Offset: {x: 0, y: 0.01113493}
+  m_Size: {x: 1, y: 1.049209}
   m_Direction: 0
 --- !u!114 &1272567476788429240
 MonoBehaviour:
@@ -168,12 +168,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D_inimigo: {fileID: 8887794743479423838}
-  VelocidadeMinimia: 1
-  velocidadeMaxima: 10
   Jogador: {fileID: 2795940631941936299, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
   prefabPoder: {fileID: 6675785885151832530, guid: 01098805573855c488bd777f159ee374, type: 3}
   BarravaidaInimigo: {fileID: 0}
   controlaInterface: {fileID: 0}
+  novosInimigos: {fileID: 0}
+  propriedadesInimigo: {fileID: 0}
+  SomTiroInimigo: {fileID: 0}
+  MusicaVitoria: {fileID: 8695682922780003562, guid: f37bf27671aa24045a426ff26ec490e8, type: 3}
 --- !u!95 &5995565442969645730
 Animator:
   serializedVersion: 5

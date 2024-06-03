@@ -10,6 +10,7 @@ public class ConfigNivelScriptableObject : ScriptableObject
     [SerializeField] private ConfiguracaoInimigo inimigo;
     [SerializeField] private int quantidadeInimigosFase;
     [SerializeField] private float distanciaMin;
+    [SerializeField] private float DanoCausadoPeloInimigo;
 
     public ConfiguracaoInimigo PegarInimigo{
         get {
@@ -24,6 +25,11 @@ public class ConfigNivelScriptableObject : ScriptableObject
     public float DistanciaMinima{
         get {
             return this.distanciaMin;
+        }
+    }
+    public float DanoInimihoFases{
+        get {
+            return this.DanoCausadoPeloInimigo;
         }
     }
 

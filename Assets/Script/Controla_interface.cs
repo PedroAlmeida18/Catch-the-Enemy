@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityEditor;
+using System;
 
 public class Controla_interface : MonoBehaviour
 {
@@ -18,26 +19,26 @@ public class Controla_interface : MonoBehaviour
     public static Controla_interface Instance;
     private GameController _gameController;
 
-
     void Awake(){
          Instance = this;
     }
     void Start()
     {
       _gameController = GameController.Instance;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-            
+        
     }
  
     public void Reiniciar(){
         SceneManager.LoadScene(sceneField.SceneName);
     }
     public void proximaFase(){
-         _gameController.SetarNivelSelecionado(1);
+         _gameController.SetarNivelSelecionado(_gameController.NivelSelecionado+1);
         SceneManager.LoadScene(Fase.SceneName);
         PainelVitoria.SetActive(false);
     }

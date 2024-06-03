@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822bb6f8b05359541b22b8619299de14, type: 3}
-  m_Name: Propriedades_Inimigo
+  m_Script: {fileID: 11500000, guid: bed124986c21e2a46ab1036b27fee235, type: 3}
+  m_Name: ConfigNivel4
   m_EditorClassIdentifier: 
-  velocidadeMinimia: 1
-  velocidadeMaxima: 5
-  distanciaMin: 2
-  vidaInimigo_Propriedade: 100
-  Tempodecriacao: 2
-  DanoCausado: 10
+  inimigo: {fileID: 11400000, guid: f59bfe81c4a9bd7468edcbcd66ba8330, type: 2}
+  quantidadeInimigosFase: 8
+  distanciaMin: 1
+  DanoCausadoPeloInimigo: 25

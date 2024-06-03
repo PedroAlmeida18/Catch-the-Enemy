@@ -10,6 +10,7 @@ public class MenuPriicnipalJogo : MonoBehaviour
 [SerializeField] private GameObject PainelMneuInicial;
 [SerializeField] private GameObject PainelOpções;
 [SerializeField] private AudioSource MusicaFundo;
+[SerializeField] private AudioSource FaseSelecionada;
 public SceneField sceneField;
     void Start()
     {
@@ -24,17 +25,20 @@ public SceneField sceneField;
         SceneManager.LoadScene(sceneField.SceneName);
     }
     public void Opcoes(){
+        FaseSelecionada.Play();
         PainelMneuInicial.SetActive(false);
         PainelOpções.SetActive(true);
 
 
     }
     public void SairOpcoes(){
+        FaseSelecionada.Play();
         PainelOpções.SetActive(false);
         PainelMneuInicial.SetActive(true);
 
     }
     public void Sair(){
+        FaseSelecionada.Play();
         Debug.Log("Saindo do Jogo");
         Application.Quit();
 

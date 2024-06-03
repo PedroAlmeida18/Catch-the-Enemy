@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CenarioController : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> cenarios;
+    [SerializeField] private  List<GameObject> cenarios;
 
    [SerializeField] private GameController gameController;
+  
+   void Awake(){
+     
+   }
 
     private void Start()
     {

@@ -26,6 +26,10 @@ public class Controla_Jogador : MonoBehaviour
     [SerializeField] private Slider sliderVida;
     public Controla_interface controlaInteface;
     public SaveData SaveJogador;
+    [SerializeField] private AudioSource Musicatiro;
+    [SerializeField] private AudioSource Somdano;
+    [SerializeField] private AudioSource MusicaVitoria;
+    private ConfigNivelScriptableObject ConfigDano;
 
 
     private void Awake()
@@ -53,7 +57,7 @@ public class Controla_Jogador : MonoBehaviour
         #else 
         TiroCompoderPc();
         #endif
-
+        Ativasom();
         MovimentaJogador();
     }
 
@@ -63,7 +67,7 @@ public class Controla_Jogador : MonoBehaviour
         {
             if (vida > 0)
             {
-                vida = vida - 5;
+                vida = vida - ConfigDano.DanoInimihoFases;
                 AlteraVida(vida);
             }
             if (vida == 0)
@@ -71,13 +75,14 @@ public class Controla_Jogador : MonoBehaviour
                 AlteraVida(vida);
                // Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
+                MusicaDerrota.Play();
                 
                 
             }
         if(collision.gameObject.CompareTag("Covas")){
             if (vida > 0)
             {
-                vida = vida - 5;
+                vida = vida - ConfigDano.DanoInimihoFases ;
                 AlteraVida(vida);
             }
             if (vida == 0)
@@ -85,23 +90,23 @@ public class Controla_Jogador : MonoBehaviour
                 AlteraVida(vida);
                // Poder.SetActive(false);
                 animatorJogador.SetBool("Vivo", false);
+                MusicaDerrota.Play();
                 
                 
             }
 
         }
 
-
-        }
-        
+        } 
     }
     private void OnTriggerEnter2D(Collider2D collider2D){
         if (collider2D.gameObject.CompareTag("BolaSangue"))
         {
             if (vida > 0)
             {
-                vida = vida - 10;
+                vida = vida - ConfigDano.DanoInimihoFases;
                 AlteraVida(vida);
+                Somdano.Play();
                 Destroy(collider2D.gameObject);
                 
             }
@@ -111,10 +116,7 @@ public class Controla_Jogador : MonoBehaviour
                 animatorJogador.SetBool("Vivo", false);
                  Destroy(collider2D.gameObject);
                 controlaInteface.PainelGaMEOVER.gameObject.SetActive(true);
-                MusicaDerrota.gameObject.SetActive(true);
-
-               //  Poder.SetActive(false);
-
+                MusicaDerrota.Play();
             }
         }
     }
@@ -136,8 +138,6 @@ public class Controla_Jogador : MonoBehaviour
         {
             animatorJogador.SetBool("Movimenta", false);
         }
-
-
     }
     public void TiroCompoderAndroid()
     {
@@ -152,12 +152,10 @@ public class Controla_Jogador : MonoBehaviour
             direcaoPoder = direcaoPoder.normalized;
 
            
-           
             int ajustarDistanciaDoTiroDoInimigo = 1;
             Controla_Poder NovoPoder = Instantiate(prefabPoder, transformjogador.position + (direcaoPoder * ajustarDistanciaDoTiroDoInimigo), Quaternion.identity);
             NovoPoder.MoverPoder(direcaoPoder);
-
-
+            Musicatiro.Play();
         }
 
     }
@@ -172,17 +170,21 @@ public class Controla_Jogador : MonoBehaviour
             Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position);
             direcaoPoder = direcaoPoder.normalized;
 
-
-
             int ajustarDistanciaDoTiroDoInimigo = 1;
             Controla_Poder NovoPoder = Instantiate(prefabPoder, transformjogador.position + (direcaoPoder * ajustarDistanciaDoTiroDoInimigo), Quaternion.identity);
             NovoPoder.MoverPoder(direcaoPoder);
-
+            Musicatiro.Play();
 
         }
 
     }
       private void AlteraVida(float vida){
         sliderVida.value = vida;
+    }
+    private void Ativasom(){
+       if(controlaInteface.PainelVitoria.activeSelf){
+            MusicaVitoria.Play();
+
+       }
     }
     }
