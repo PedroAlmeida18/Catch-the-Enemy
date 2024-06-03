@@ -25,6 +25,7 @@ public class Controla_Jogador : MonoBehaviour
     public static Controla_Jogador Instance;
     [SerializeField] private Slider sliderVida;
     public Controla_interface controlaInteface;
+    public SaveData SaveJogador;
 
 
     private void Awake()
@@ -40,6 +41,7 @@ public class Controla_Jogador : MonoBehaviour
         transformjogador = GetComponent<Transform>();
         animatorJogador = GetComponent<Animator>();
         controlaInteface = Controla_interface.Instance;
+        SaveJogador = SaveData.Instance;
     }
 
     // Update is called once per frame
@@ -101,6 +103,7 @@ public class Controla_Jogador : MonoBehaviour
                 vida = vida - 10;
                 AlteraVida(vida);
                 Destroy(collider2D.gameObject);
+                
             }
             if (vida == 0)
             {

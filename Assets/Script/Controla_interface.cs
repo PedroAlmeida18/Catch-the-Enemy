@@ -13,6 +13,7 @@ public class Controla_interface : MonoBehaviour
     public GameObject PainelPause;
     public SceneField sceneField;
     public SceneField Fase;
+    public SceneField TelaFases;
     public float tempo = 100f;
     public static Controla_interface Instance;
     private GameController _gameController;
@@ -49,6 +50,9 @@ public class Controla_interface : MonoBehaviour
     public void desativarPause(){
         Time.timeScale=1;
         PainelPause.gameObject.SetActive(false);
+    }
+    public void VoltaTelaFases(){
+        SceneManager.LoadScene(TelaFases);
     }
 
 }

@@ -12,6 +12,7 @@ TagManager:
   - Perdeu
   - BolaSangue
   - Covas
+  - Data
   layers:
   - Default
   - TransparentFX
