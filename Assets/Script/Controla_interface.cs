@@ -39,6 +39,7 @@ public class Controla_interface : MonoBehaviour
     }
     public void proximaFase(){
          _gameController.SetarNivelSelecionado(_gameController.NivelSelecionado+1);
+         SaveData.instance.Save();
         SceneManager.LoadScene(Fase.SceneName);
         PainelVitoria.SetActive(false);
     }

@@ -1,34 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
-    public int Nível;
-    public float vidaJogador;
-    public int ZumbiMortos;
+    public int Nivel;
+
     public static SaveData instance;
-    private Controla_Inimigo DadosInimigo;
-    private Controla_Jogador DaddosJogador;
     private GameController _gameController;
 
     void Awake()
     {
-            instance = this;
+        instance = this;
     }
 
-   public  void Load()
+    public void Start()
     {
-        DadosInimigo = Controla_Inimigo.Instance;
-        DaddosJogador = Controla_Jogador.Instance;
         _gameController = GameController.Instance;
-        print("Vida do Jogador é : " + DaddosJogador);
-        print("Nivel é :" + Nível + 1 );
+        
     }
 
     void Update()
     {
-        vidaJogador = DaddosJogador.vida;
-        Nível = _gameController.NivelSelecionado;
+        Nivel = _gameController.NivelSelecionado;
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("NivelAtualDesbloqueado", Nivel);
+        Debug.Log("Salvou o nivel atual do Jogador: " + Nivel);
+    }
+
+    public void LoadPrefs()
+    {
+        Nivel = PlayerPrefs.GetInt("NivelAtualDesbloqueado", 0); // Padrão para 0 se não estiver definido
+        Debug.Log("Nivel que está desbloqueado é: " + Nivel);
+    }
+
+    public int GetNivelDesbloqueado()
+    {
+        return PlayerPrefs.GetInt("NivelAtualDesbloqueado", 0); // Padrão para 0 se não estiver definido
     }
 }

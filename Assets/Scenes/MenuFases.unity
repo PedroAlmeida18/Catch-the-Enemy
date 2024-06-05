@@ -1568,7 +1568,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1750424652}
         m_TargetAssemblyTypeName: MenuFases, Assembly-CSharp
-        m_MethodName: voltarEntrada
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4114,6 +4114,12 @@ MonoBehaviour:
     _sceneAsset: {fileID: 102900000, guid: ef963c79ab5982740a566a3784eced8c, type: 3}
     _sceneName: Menuincial
   Faseselecionada: {fileID: 1876966908}
+  faseButtons:
+  - {fileID: 1919966972}
+  - {fileID: 1444166290}
+  - {fileID: 2022565825}
+  - {fileID: 2045957574}
+  - {fileID: 2054235133}
 --- !u!4 &1750424653
 Transform:
   m_ObjectHideFlags: 0

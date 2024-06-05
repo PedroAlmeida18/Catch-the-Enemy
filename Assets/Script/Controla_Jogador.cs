@@ -52,13 +52,14 @@ public class Controla_Jogador : MonoBehaviour
     void Update()
 
     {
+        MovimentaJogador();
         #if !UNITY_EDITOR
         TiroCompoderAndroid();
         #else 
         TiroCompoderPc();
         #endif
         Ativasom();
-        MovimentaJogador();
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
