@@ -45,7 +45,7 @@ public class Controla_Jogador : MonoBehaviour
         transformjogador = GetComponent<Transform>();
         animatorJogador = GetComponent<Animator>();
         controlaInteface = Controla_interface.Instance;
-        SaveJogador = SaveData.Instance;
+        SaveJogador = SaveData.instance;
     }
 
     // Update is called once per frame

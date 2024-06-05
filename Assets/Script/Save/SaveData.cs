@@ -4,37 +4,31 @@ using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
-    public  static int Nivel ;
-    public  static int vidaJoga;
-    public string  name ;
-    [SerializeField]private GameObject [] Datas ;
-     public Controla_Jogador Salvarjogador;
-     public static SaveData Instance;
-    void Awake (){
-        Instance= this;
-        Datas = GameObject.FindGameObjectsWithTag("Data");
-        if(Datas.Length>=2){
-            Salvarjogador.vida = vidaJoga;
-            Destroy (Datas[0]);
+    public int Nível;
+    public float vidaJogador;
+    public int ZumbiMortos;
+    public static SaveData instance;
+    private Controla_Inimigo DadosInimigo;
+    private Controla_Jogador DaddosJogador;
+    private GameController _gameController;
 
-            
-        }
-        if(Input.GetKeyDown("w")){
-            PlayerPrefs.SetInt("Vida", vidaJoga);
-        }
-        DontDestroyOnLoad(transform.gameObject);
-
-
-    }
-    
-    void Start()
+    void Awake()
     {
-        Salvarjogador = Controla_Jogador.Instance;
+            instance = this;
     }
 
-    // Update is called once per frame
+   public  void Load()
+    {
+        DadosInimigo = Controla_Inimigo.Instance;
+        DaddosJogador = Controla_Jogador.Instance;
+        _gameController = GameController.Instance;
+        print("Vida do Jogador é : " + DaddosJogador);
+        print("Nivel é :" + Nível + 1 );
+    }
+
     void Update()
     {
-        
+        vidaJogador = DaddosJogador.vida;
+        Nível = _gameController.NivelSelecionado;
     }
 }

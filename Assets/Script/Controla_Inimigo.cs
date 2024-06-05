@@ -30,8 +30,12 @@ public class Controla_Inimigo : MonoBehaviour
     public Controla_interface controlaInterface;
     public NovosInimigos novosInimigos;
     public  Propriedades propriedadesInimigo;
-   
+    public int ZumbiMortossave;
+    public static Controla_Inimigo Instance;
 
+    void Awake(){
+        Instance = this;
+    }
     void Start()
     {
         TempoEmcriacao = 0;
@@ -66,6 +70,7 @@ public class Controla_Inimigo : MonoBehaviour
                 gameObject.SetActive(false);
 
                 zumbimorto++;
+                ZumbiMortossave = zumbimorto;
             }
            
 
