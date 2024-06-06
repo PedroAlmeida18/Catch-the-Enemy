@@ -74,4 +74,9 @@ public class MenuFases : MonoBehaviour
     public void Load(){
         SaveData.instance.LoadPrefs();
     }
+     public void DeletarProgresso()
+    {
+        SaveData.instance.Delete();
+        AtualizarMenuFases(); 
+    }
 }

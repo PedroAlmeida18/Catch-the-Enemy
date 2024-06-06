@@ -13,6 +13,7 @@ public class SaveData : MonoBehaviour
     void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Start()
@@ -41,5 +42,10 @@ public class SaveData : MonoBehaviour
     public int GetNivelDesbloqueado()
     {
         return PlayerPrefs.GetInt("NivelAtualDesbloqueado", 0); // Padrão para 0 se não estiver definido
+    }
+     public void Delete()
+    {
+        PlayerPrefs.DeleteKey("NivelAtualDesbloqueado");
+        Debug.Log("Progresso deletado.");
     }
 }

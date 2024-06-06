@@ -28,8 +28,6 @@ public SceneField sceneField;
         FaseSelecionada.Play();
         PainelMneuInicial.SetActive(false);
         PainelOpções.SetActive(true);
-
-
     }
     public void SairOpcoes(){
         FaseSelecionada.Play();
