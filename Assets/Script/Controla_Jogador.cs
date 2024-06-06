@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Controla_Jogador : MonoBehaviour
 {
     [SerializeField] private AudioSource MusicaDerrota;
-    public FixedJoystick MovimentaControle ;
+    public FixedJoystick MovimentaControle;
     Rigidbody2D rigidbody2D_Jogador;
     public Transform transformjogador;
     public float velocidade;
@@ -31,7 +31,6 @@ public class Controla_Jogador : MonoBehaviour
     [SerializeField] private AudioSource MusicaVitoria;
     private ConfigNivelScriptableObject ConfigDano;
 
-
     private void Awake()
     {
         Instance = this;
@@ -50,7 +49,6 @@ public class Controla_Jogador : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
     {
         MovimentaJogador();
         #if !UNITY_EDITOR
@@ -59,48 +57,28 @@ public class Controla_Jogador : MonoBehaviour
         TiroCompoderPc();
         #endif
         Ativasom();
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Inimigo"))
+        if (collision.gameObject.CompareTag("Inimigo") || collision.gameObject.CompareTag("Covas"))
         {
             if (vida > 0)
             {
                 vida = vida - ConfigDano.DanoInimihoFases;
                 AlteraVida(vida);
+                if (vida == 0)
+                {
+                    AlteraVida(vida);
+                    animatorJogador.SetBool("Vivo", false);
+                    MusicaDerrota.Play();
+                }
             }
-            if (vida == 0)
-            {
-                AlteraVida(vida);
-               // Poder.SetActive(false);
-                animatorJogador.SetBool("Vivo", false);
-                MusicaDerrota.Play();
-                
-                
-            }
-        if(collision.gameObject.CompareTag("Covas")){
-            if (vida > 0)
-            {
-                vida = vida - ConfigDano.DanoInimihoFases ;
-                AlteraVida(vida);
-            }
-            if (vida == 0)
-            {
-                AlteraVida(vida);
-               // Poder.SetActive(false);
-                animatorJogador.SetBool("Vivo", false);
-                MusicaDerrota.Play();
-                
-                
-            }
-
         }
-
-        } 
     }
-    private void OnTriggerEnter2D(Collider2D collider2D){
+
+    private void OnTriggerEnter2D(Collider2D collider2D)
+    {
         if (collider2D.gameObject.CompareTag("BolaSangue"))
         {
             if (vida > 0)
@@ -109,83 +87,76 @@ public class Controla_Jogador : MonoBehaviour
                 AlteraVida(vida);
                 Somdano.Play();
                 Destroy(collider2D.gameObject);
-                
-            }
-            if (vida == 0)
-            {
-                AlteraVida(vida);
-                animatorJogador.SetBool("Vivo", false);
-                 Destroy(collider2D.gameObject);
-                controlaInteface.PainelGaMEOVER.gameObject.SetActive(true);
-                MusicaDerrota.Play();
+                if (vida == 0)
+                {
+                    AlteraVida(vida);
+                    animatorJogador.SetBool("Vivo", false);
+                    controlaInteface.PainelGaMEOVER.gameObject.SetActive(true);
+                    MusicaDerrota.Play();
+                }
             }
         }
     }
+
     private void MovimentaJogador()
     {
-
-        velocidade = 5.0f;
-       // float eixoX = Input.GetAxis("Horizontal");
-        //float eixoy = Input.GetAxis("Vertical");
         float eixoX = MovimentaControle.Horizontal;
         float eixoy = MovimentaControle.Vertical;
         Vector3 novaposicao = new Vector3(eixoX, eixoy, 0);
         transformjogador.Translate(novaposicao * velocidade * Time.deltaTime);
-        if (novaposicao != Vector3.zero)
-        {
-            animatorJogador.SetBool("Movimenta", true);
-        }
-        else
-        {
-            animatorJogador.SetBool("Movimenta", false);
-        }
+        animatorJogador.SetBool("Movimenta", novaposicao != Vector3.zero);
     }
+
     public void TiroCompoderAndroid()
     {
-        if (Input.touchCount>0)
+        if (Input.touchCount > 0)
         {
-            Touch toqueTiro = Input.GetTouch(1);
-            Vector2 posicaomouse = toqueTiro.position;
-            Vector3 posicaomouseNoMundo = this.camera.ScreenToWorldPoint(posicaomouse);
-            posicaomouseNoMundo.z = 0;
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began)
+                {
+                    Vector2 posicaomouse = touch.position;
+                    Vector3 posicaomouseNoMundo = this.camera.ScreenToWorldPoint(posicaomouse);
+                    posicaomouseNoMundo.z = 0;
 
-            Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position);
-            direcaoPoder = direcaoPoder.normalized;
+                    Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position).normalized;
 
-           
-            int ajustarDistanciaDoTiroDoInimigo = 1;
-            Controla_Poder NovoPoder = Instantiate(prefabPoder, transformjogador.position + (direcaoPoder * ajustarDistanciaDoTiroDoInimigo), Quaternion.identity);
-            NovoPoder.MoverPoder(direcaoPoder);
-            Musicatiro.Play();
+                    int ajustarDistanciaDoTiroDoInimigo = 1;
+                    Controla_Poder NovoPoder = Instantiate(prefabPoder, transformjogador.position + (direcaoPoder * ajustarDistanciaDoTiroDoInimigo), Quaternion.identity);
+                    NovoPoder.MoverPoder(direcaoPoder);
+                    Musicatiro.Play();
+                }
+            }
         }
-
     }
-    public void TiroCompoderPc(){
-         
+
+    public void TiroCompoderPc()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 posicaomouse = Input.mousePosition;
             Vector3 posicaomouseNoMundo = this.camera.ScreenToWorldPoint(posicaomouse);
             posicaomouseNoMundo.z = 0;
 
-            Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position);
-            direcaoPoder = direcaoPoder.normalized;
+            Vector3 direcaoPoder = (posicaomouseNoMundo - transformjogador.position).normalized;
 
             int ajustarDistanciaDoTiroDoInimigo = 1;
             Controla_Poder NovoPoder = Instantiate(prefabPoder, transformjogador.position + (direcaoPoder * ajustarDistanciaDoTiroDoInimigo), Quaternion.identity);
             NovoPoder.MoverPoder(direcaoPoder);
             Musicatiro.Play();
-
         }
-
     }
-      private void AlteraVida(float vida){
+
+    private void AlteraVida(float vida)
+    {
         sliderVida.value = vida;
     }
-    private void Ativasom(){
-       if(controlaInteface.PainelVitoria.activeSelf){
-            MusicaVitoria.Play();
 
-       }
+    private void Ativasom()
+    {
+        if (controlaInteface.PainelVitoria.activeSelf)
+        {
+            MusicaVitoria.Play();
+        }
     }
-    }
+}

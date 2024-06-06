@@ -7767,7 +7767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2795940631941936299, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
       propertyPath: vida
-      value: 5000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2795940631941936299, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
       propertyPath: Poder
@@ -7793,6 +7793,10 @@ PrefabInstance:
       propertyPath: sliderVida
       value: 
       objectReference: {fileID: 352769172}
+    - target: {fileID: 2795940631941936299, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
+      propertyPath: velocidade
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2795940631941936299, guid: 10b677bf096d3fa478c0796be49318be, type: 3}
       propertyPath: prefabPoder
       value: 
