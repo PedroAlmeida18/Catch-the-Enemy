@@ -12,6 +12,8 @@ public class ConfigNivelScriptableObject : ScriptableObject
     [SerializeField] private float distanciaMin;
     [SerializeField] private float DanoCausadoPeloInimigo;
 
+    
+
     public ConfiguracaoInimigo PegarInimigo{
         get {
             return this.inimigo;

@@ -174,8 +174,13 @@ MonoBehaviour:
   controlaInterface: {fileID: 0}
   novosInimigos: {fileID: 0}
   propriedadesInimigo: {fileID: 0}
-  SomTiroInimigo: {fileID: 0}
-  MusicaVitoria: {fileID: 8695682922780003562, guid: f37bf27671aa24045a426ff26ec490e8, type: 3}
+  ZumbiMortossave: 0
+  configNivelScriptableObjects:
+  - {fileID: 11400000, guid: f7ad7cd9f14148d40991c1881df4e395, type: 2}
+  - {fileID: 11400000, guid: 90e7f4ca361431f4ab2b7b448a616000, type: 2}
+  - {fileID: 11400000, guid: 8de36e808af694044a64a944e2f3cdbf, type: 2}
+  - {fileID: 11400000, guid: e6139ba7da239834b921a648a084edec, type: 2}
+  - {fileID: 11400000, guid: 3ce0e3850d7bab948bb4013ab8fe00e9, type: 2}
 --- !u!95 &5995565442969645730
 Animator:
   serializedVersion: 5

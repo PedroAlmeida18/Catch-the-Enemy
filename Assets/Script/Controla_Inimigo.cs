@@ -32,6 +32,9 @@ public class Controla_Inimigo : MonoBehaviour
     public  Propriedades propriedadesInimigo;
     public int ZumbiMortossave;
     public static Controla_Inimigo Instance;
+    private ConfigNivelScriptableObject atualConfigNivelScriptableObject;
+    private GameController gameController;
+    [SerializeField] private List<ConfigNivelScriptableObject> configNivelScriptableObjects;
 
     void Awake(){
         Instance = this;
@@ -47,6 +50,7 @@ public class Controla_Inimigo : MonoBehaviour
         BarravaidaInimigo = BarraVida.Instance;
         controlaInterface = Controla_interface.Instance;
         novosInimigos = NovosInimigos.Instance;
+        gameController = GameController.Instance;
     }
 
 
@@ -85,7 +89,7 @@ public class Controla_Inimigo : MonoBehaviour
     private void MovimentaInimigo()
     {
         Vector3 direcaoPSeguir = Jogador.transform.position - transformInimigo.position;
-        float velocidade = 2.0f;
+        float velocidade = 1.2f;
         float x = Random.Range(-9, 9);
         float y = Random.Range(-4, 4);
         Vector3 novaposicao = new Vector3(x, y, 0);
@@ -119,7 +123,8 @@ public class Controla_Inimigo : MonoBehaviour
         }
     }
     private void VerficaVitoria(){
-        if(zumbimorto == novosInimigos.SalvarQuantidadeInimigos){
+        atualConfigNivelScriptableObject = configNivelScriptableObjects[gameController.NivelSelecionado];
+        if(zumbimorto == atualConfigNivelScriptableObject.QuantidadeInimigos){
             controlaInterface.PainelVitoria.gameObject.SetActive(true);
            
             if(controlaInterface.PainelVitoria.activeSelf){

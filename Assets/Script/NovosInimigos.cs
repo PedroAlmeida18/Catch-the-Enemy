@@ -42,8 +42,8 @@ public class NovosInimigos : MonoBehaviour
 
         for (int x = 0; x < atualConfigNivelScriptableObject.QuantidadeInimigos; x++)
         {
-            float eixox = Random.Range(-8, 8);
-            float eixoy = Random.Range(-4.5f,4.5f);
+            float eixox = Random.Range(-6, 8);
+            float eixoy = Random.Range(-3.7f,3.7f);
             Vector2 psocaoInimigo = new Vector2(eixox, eixoy);
 
             yield return new WaitForSeconds(atualConfigNivelScriptableObject.PegarInimigo.PropriedadesInimigo.TempoDecriacao);

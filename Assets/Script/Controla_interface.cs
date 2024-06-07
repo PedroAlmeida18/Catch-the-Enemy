@@ -35,7 +35,8 @@ public class Controla_interface : MonoBehaviour
     }
  
     public void Reiniciar(){
-        SceneManager.LoadScene(sceneField.SceneName);
+
+        SceneManager.LoadScene(_gameController.NivelSelecionado);
     }
     public void proximaFase(){
          _gameController.SetarNivelSelecionado(_gameController.NivelSelecionado+1);
@@ -55,6 +56,10 @@ public class Controla_interface : MonoBehaviour
     }
     public void VoltaTelaFases(){
         SceneManager.LoadScene(TelaFases);
+    }
+    public void VoltarFase(){
+        _gameController.SetarNivelSelecionado(_gameController.NivelSelecionado);
+        SceneManager.LoadScene(Fase.SceneName);
     }
 
 }

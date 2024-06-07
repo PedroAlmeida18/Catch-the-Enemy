@@ -29,7 +29,9 @@ public class Controla_Jogador : MonoBehaviour
     [SerializeField] private AudioSource Musicatiro;
     [SerializeField] private AudioSource Somdano;
     [SerializeField] private AudioSource MusicaVitoria;
-    private ConfigNivelScriptableObject ConfigDano;
+    private ConfigNivelScriptableObject atualConfigNivelScriptableObject;
+    private GameController gameController;
+    [SerializeField] private List<ConfigNivelScriptableObject> configNivelScriptableObjects;
 
     private void Awake()
     {
@@ -45,6 +47,7 @@ public class Controla_Jogador : MonoBehaviour
         animatorJogador = GetComponent<Animator>();
         controlaInteface = Controla_interface.Instance;
         SaveJogador = SaveData.instance;
+        gameController = GameController.Instance;
     }
 
     // Update is called once per frame
@@ -65,12 +68,15 @@ public class Controla_Jogador : MonoBehaviour
         {
             if (vida > 0)
             {
-                vida = vida - ConfigDano.DanoInimihoFases;
+
+                atualConfigNivelScriptableObject = configNivelScriptableObjects[gameController.NivelSelecionado];
+                vida = vida - atualConfigNivelScriptableObject.DanoInimihoFases;
                 AlteraVida(vida);
                 if (vida == 0)
                 {
                     AlteraVida(vida);
                     animatorJogador.SetBool("Vivo", false);
+                    controlaInteface.PainelGaMEOVER.gameObject.SetActive(true);
                     MusicaDerrota.Play();
                 }
             }
@@ -83,7 +89,7 @@ public class Controla_Jogador : MonoBehaviour
         {
             if (vida > 0)
             {
-                vida = vida - ConfigDano.DanoInimihoFases;
+                vida = vida - atualConfigNivelScriptableObject.DanoInimihoFases;;
                 AlteraVida(vida);
                 Somdano.Play();
                 Destroy(collider2D.gameObject);
