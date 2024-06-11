@@ -70,7 +70,7 @@ public class Controla_Jogador : MonoBehaviour
             {
 
                 atualConfigNivelScriptableObject = configNivelScriptableObjects[gameController.NivelSelecionado];
-                vida = vida - atualConfigNivelScriptableObject.DanoInimihoFases;
+                vida = vida - 15;
                 AlteraVida(vida);
                 if (vida == 0)
                 {
@@ -89,6 +89,7 @@ public class Controla_Jogador : MonoBehaviour
         {
             if (vida > 0)
             {
+                atualConfigNivelScriptableObject = configNivelScriptableObjects[gameController.NivelSelecionado];
                 vida = vida - atualConfigNivelScriptableObject.DanoInimihoFases;;
                 AlteraVida(vida);
                 Somdano.Play();
