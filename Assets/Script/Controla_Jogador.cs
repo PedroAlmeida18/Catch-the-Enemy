@@ -72,7 +72,7 @@ public class Controla_Jogador : MonoBehaviour
                 atualConfigNivelScriptableObject = configNivelScriptableObjects[gameController.NivelSelecionado];
                 vida = vida - 15;
                 AlteraVida(vida);
-                if (vida == 0)
+                if (vida <= 0)
                 {
                     AlteraVida(vida);
                     animatorJogador.SetBool("Vivo", false);
@@ -94,7 +94,7 @@ public class Controla_Jogador : MonoBehaviour
                 AlteraVida(vida);
                 Somdano.Play();
                 Destroy(collider2D.gameObject);
-                if (vida == 0)
+                if (vida <= 0)
                 {
                     AlteraVida(vida);
                     animatorJogador.SetBool("Vivo", false);
@@ -154,7 +154,7 @@ public class Controla_Jogador : MonoBehaviour
         }
     }
 
-    private void AlteraVida(float vida)
+    public void AlteraVida(float vida)
     {
         sliderVida.value = vida;
     }

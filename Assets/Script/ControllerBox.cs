@@ -9,7 +9,7 @@ public class ControllerBox : MonoBehaviour
     private int vidaBox = 30;
     void Start()
     {
-        
+        Jogador=Controla_Jogador.Instance;
     }
 
     // Update is called once per frame
@@ -30,6 +30,8 @@ public class ControllerBox : MonoBehaviour
             if(vidaBox==0){
                 Destroy(Caixa);
                 Jogador.vida+=30;
+                Jogador.AlteraVida(Jogador.vida);
+            
             }
         }
 

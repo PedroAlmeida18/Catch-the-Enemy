@@ -9,9 +9,14 @@ public class MenuPriicnipalJogo : MonoBehaviour
 
 [SerializeField] private GameObject PainelMneuInicial;
 [SerializeField] private GameObject PainelOpções;
-[SerializeField] private AudioSource MusicaFundo;
+[SerializeField] public AudioSource MusicaFundo;
 [SerializeField] private AudioSource FaseSelecionada;
 public SceneField sceneField;
+public static MenuPriicnipalJogo Instance;
+    void Awake(){
+        Instance=this;
+        DontDestroyOnLoad(MusicaFundo.gameObject);
+    }
     void Start()
     {
         
@@ -43,6 +48,6 @@ public SceneField sceneField;
     }
     public void ControleVolume(float valor){
         MusicaFundo.volume = valor;
-
     }
+
 }

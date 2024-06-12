@@ -15,4 +15,4 @@ MonoBehaviour:
   inimigo: {fileID: 11400000, guid: f59bfe81c4a9bd7468edcbcd66ba8330, type: 2}
   quantidadeInimigosFase: 8
   distanciaMin: 1
-  DanoCausadoPeloInimigo: 30
+  DanoCausadoPeloInimigo: 22

@@ -20,7 +20,7 @@ public class Controla_Inimigo : MonoBehaviour
 
     public Controla_Jogador Jogador;
 
-    int vidaInimigo = 100;
+    int vidaInimigo = 150;
 
     private Camera camera;
     [SerializeField]

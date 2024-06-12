@@ -12,12 +12,14 @@ public class MenuFases : MonoBehaviour
     private GameController _gameController;
     [SerializeField] private AudioSource Faseselecionada;
      public List<Button> faseButtons;
+     public MenuPriicnipalJogo audio;
 
     private void Start()
     {
         _gameController = GameController.Instance;
         Faseselecionada.Play();
          AtualizarMenuFases();
+         audio=MenuPriicnipalJogo.Instance;
     }
 
     private void AtualizarMenuFases()
@@ -69,7 +71,9 @@ public class MenuFases : MonoBehaviour
     public void voltarEntrada()
     {
         SceneManager.LoadScene(voltar.SceneName);
-         Faseselecionada.Play();
+        Faseselecionada.Play();
+        Destroy(audio.MusicaFundo.gameObject);
+         
     }
     public void Load(){
         SaveData.instance.LoadPrefs();

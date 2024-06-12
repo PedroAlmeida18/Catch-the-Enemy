@@ -9,6 +9,7 @@ public class SaveData : MonoBehaviour
 
     public static SaveData instance;
     private GameController _gameController;
+    private static MenuPriicnipalJogo menuPricnipalJogo;
 
     void Awake()
     {
@@ -19,6 +20,7 @@ public class SaveData : MonoBehaviour
     public void Start()
     {
         _gameController = GameController.Instance;
+        menuPricnipalJogo = MenuPriicnipalJogo.Instance;
         
     }
 
@@ -29,7 +31,7 @@ public class SaveData : MonoBehaviour
 
     public void Save()
     {
-        PlayerPrefs.SetInt("NivelAtualDesbloqueado", Nivel);
+        PlayerPrefs.SetInt("NivelAtualDesbloqueado", Nivel+1);
         Debug.Log("Salvou o nivel atual do Jogador: " + Nivel);
     }
 
@@ -43,9 +45,13 @@ public class SaveData : MonoBehaviour
     {
         return PlayerPrefs.GetInt("NivelAtualDesbloqueado", 0); // Padrão para 0 se não estiver definido
     }
+    public void VolumeSom(){
+        PlayerPrefs.SetFloat("Volume",menuPricnipalJogo.MusicaFundo.volume);
+    }
      public void Delete()
     {
         PlayerPrefs.DeleteKey("NivelAtualDesbloqueado");
+        PlayerPrefs.DeleteKey("Volume");
         Debug.Log("Progresso deletado.");
     }
 }
